@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Login = () => {
     return (
@@ -6,7 +7,7 @@ const Login = () => {
             <div className="w-full max-w-md p-4 rounded-md shadow mt-[100px] mx-auto sm:p-8 bg-black text-white dark:bg-gray-50 dark:text-gray-800">
                 <h2 className="mb-3 text-3xl font-semibold text-center">Login to your account</h2>
                 <p className="text-sm text-center dark:text-gray-600">Don't have account?
-                    <a href="#" rel="noopener noreferrer" className="focus:underline hover:underline">Sign up here</a>
+                    <Link  to={'/registration'} className="focus:underline hover:underline">Sign up</Link> here
                 </p>
                 <div className="my-6 space-y-4">
                     <button aria-label="Login with Google" type="button" className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600">

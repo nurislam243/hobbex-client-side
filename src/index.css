@@ -1,2 +1,71 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+@plugin "daisyui/theme" {
+    name: "appverse";
+    default: true;
+    prefersdark: false;
+    color-scheme: light;
+  
+    --color-base-100: oklch(98% 0.02 240);
+    --color-base-200: oklch(95% 0.03 240);
+    --color-base-300: oklch(92% 0.04 240);
+    --color-base-content: oklch(20% 0.05 240);
+  
+    --color-primary: oklch(60% 0.25 300); /* Vibrant purple */
+    --color-primary-content: oklch(98% 0.01 300);
+  
+    --color-secondary: oklch(65% 0.25 250); /* Bright blue */
+    --color-secondary-content: oklch(98% 0.01 250);
+  
+    --color-accent: oklch(70% 0.25 340); /* Pinkish */
+    --color-accent-content: oklch(98% 0.01 340);
+  
+    --color-neutral: oklch(40% 0.05 240); /* Dark gray */
+    --color-neutral-content: oklch(98% 0.01 240);
+  
+    --color-info: oklch(70% 0.2 220);
+    --color-info-content: oklch(98% 0.01 220);
+  
+    --color-success: oklch(65% 0.25 140);
+    --color-success-content: oklch(98% 0.01 140);
+  
+    --color-warning: oklch(80% 0.25 80);
+    --color-warning-content: oklch(20% 0.05 80);
+  
+    --color-error: oklch(65% 0.3 30);
+    --color-error-content: oklch(98% 0.01 30);
+  }
+  
+
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #FFF;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-bottom: 4px solid #FF3D00;
+  border-left: 4px solid transparent;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 

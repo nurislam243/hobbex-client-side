@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Footer = () => {
+const AllGroups = () => {
     return (
         <div>
-            I am Footer
+            AllGroups
         </div>
     );
 };
 
-export default Footer;
+export default AllGroups;
