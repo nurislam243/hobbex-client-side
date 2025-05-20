@@ -2,39 +2,39 @@
 @plugin "daisyui";
 
 @plugin "daisyui/theme" {
-    name: "appverse";
+    name: "hobbex";
     default: true;
     prefersdark: false;
     color-scheme: light;
-  
-    --color-base-100: oklch(98% 0.02 240);
-    --color-base-200: oklch(95% 0.03 240);
-    --color-base-300: oklch(92% 0.04 240);
-    --color-base-content: oklch(20% 0.05 240);
-  
-    --color-primary: oklch(60% 0.25 300); /* Vibrant purple */
-    --color-primary-content: oklch(98% 0.01 300);
-  
-    --color-secondary: oklch(65% 0.25 250); /* Bright blue */
-    --color-secondary-content: oklch(98% 0.01 250);
-  
-    --color-accent: oklch(70% 0.25 340); /* Pinkish */
-    --color-accent-content: oklch(98% 0.01 340);
-  
-    --color-neutral: oklch(40% 0.05 240); /* Dark gray */
-    --color-neutral-content: oklch(98% 0.01 240);
-  
-    --color-info: oklch(70% 0.2 220);
+    --color-base-100: oklch(98% 0.01 280);
+    --color-base-200: oklch(95% 0.02 280);
+    --color-base-300: oklch(92% 0.03 280);
+    --color-base-content: oklch(20% 0.05 280);
+
+    --color-primary: oklch(57% 0.25 261);
+    --color-primary-content: oklch(98% 0.01 261);
+
+    --color-secondary: oklch(70% 0.30 101);
+    --color-secondary-content: oklch(20% 0.05 101);
+
+    --color-accent: oklch(63% 0.24 190);
+    --color-accent-content: oklch(98% 0.01 190);
+
+    --color-neutral: oklch(35% 0.04 250);
+    --color-neutral-content: oklch(98% 0.01 250);
+
+    --color-info: oklch(65% 0.22 220);
     --color-info-content: oklch(98% 0.01 220);
-  
+
     --color-success: oklch(65% 0.25 140);
     --color-success-content: oklch(98% 0.01 140);
-  
+
     --color-warning: oklch(80% 0.25 80);
     --color-warning-content: oklch(20% 0.05 80);
+
+    --color-error: oklch(60% 0.28 30);
+    --color-error-content: oklch(98% 0.01 30); 
   
-    --color-error: oklch(65% 0.3 30);
-    --color-error-content: oklch(98% 0.01 30);
   }
   
 

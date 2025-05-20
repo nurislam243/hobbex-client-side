@@ -10,7 +10,6 @@ const Home = () => {
     return (
         <div>
             <ThemeControler></ThemeControler>
-            <Spinner></Spinner>
 
 
             {/* <Banner></Banner> */}

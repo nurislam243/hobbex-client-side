@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AuthContext } from './AuthContext';
-import { createUserWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile } from 'firebase/auth';
 import { auth } from '../firebase/firebase.config';
 import Swal from 'sweetalert2';
 
 const AuthProvider = ({children}) => {
+    const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
+    console.log("photoURL", user?.photoURL);
 
     // create user using email and password
     const createUser = (email, password, name, profileImage, navigate) => {
@@ -22,8 +24,7 @@ const AuthProvider = ({children}) => {
             ...auth.currentUser, name, profileImage
             });
         }).catch((error) => {
-          // An error occurred
-          // ...
+          alert(error)
         });
 
         Swal.fire({
@@ -46,8 +47,6 @@ const AuthProvider = ({children}) => {
         });
 
     }
-
-
 
     //handle logout
     const handleLogout = () => {
@@ -87,6 +86,18 @@ const AuthProvider = ({children}) => {
         createUser,
         handleLogout
     }
+
+
+    useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+        setUser(currentUser);
+        setLoading(false);
+    });
+    
+    return () => {
+        unsubscribe();
+    }
+    }, []);
 
     return (
         <AuthContext value={authValue}>

@@ -1,12 +1,11 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../context/AuthContext';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 
 const Register = () => {
-    const {createUser, setUser, user} = useContext(AuthContext);
+    const {createUser} = useContext(AuthContext);
     const navigate = useNavigate();
-    console.log(user);
 
     const handleRegistration = (e) =>{
         e.preventDefault();
