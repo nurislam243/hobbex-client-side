@@ -20,7 +20,7 @@ import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
             Component: Home
         },
         {
-          path: '/allGroups',
+          path: '/groups',
           Component: AllGroups
         },
         {

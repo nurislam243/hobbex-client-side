@@ -30,7 +30,7 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li><NavLink to={'/'}>Home</NavLink></li>
-                        <li><NavLink to={'/allGroups'}>AllGroups</NavLink></li>
+                        <li><NavLink to={'/groups'}>AllGroups</NavLink></li>
                         <li><NavLink to={'/createGroup'}>Create Group</NavLink></li>
                         <li><NavLink to={'/myGroups'}>My Groups</NavLink></li>                   
                     </ul>
