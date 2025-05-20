@@ -4,6 +4,7 @@ import ThemeControler from '../../ui/ThemeControler/ThemeControler';
 import Spinner from '../../ui/Spinner/Spinner';
 import { AuthContext } from '../../context/AuthContext';
 import FeaturedSection from '../../components/FeaturedSection/FeaturedSection';
+import BenefitsSection from '../../components/BenefitsSection/BenefitsSection';
 
 const Home = () => {
     const {user} = useContext(AuthContext);
@@ -13,6 +14,7 @@ const Home = () => {
             <ThemeControler></ThemeControler>
             <Banner></Banner>
             <FeaturedSection></FeaturedSection>
+            <BenefitsSection></BenefitsSection>
 
 
         </div>
