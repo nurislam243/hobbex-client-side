@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router';
-import { AuthContext } from '../../context/AuthContext';
 import NavbarEnd from '../NavbarEnd/NavbarEnd';
 
 const Navbar = () => {
@@ -15,8 +14,10 @@ const Navbar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a>Item 1</a></li>
-                        <li><a>Item 3</a></li>
+                        <li><NavLink to={'/'}>Home</NavLink></li>
+                        <li><NavLink to={'/allGroups'}>AllGroups</NavLink></li>
+                        <li><NavLink to={'/createGroup'}>Create Group</NavLink></li>
+                        <li><NavLink to={'/myGroups'}>My Groups</NavLink></li>      
                     </ul>
                     </div>
                     <div className="flex gap-1 items-center">
