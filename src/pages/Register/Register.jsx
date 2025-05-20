@@ -1,15 +1,39 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router';
+import { AuthContext } from '../../context/AuthContext';
+import { toast } from 'react-toastify';
 
 const Register = () => {
+    const {createUser, setUser} = useContext(AuthContext);
+
+    const handleRegistration = (e) =>{
+        e.preventDefault();
+        const form = e.target;
+        // const formData = new FormData (form);
+        const name = form.name.value;
+        const email = form.email.value;
+        const photoUrl = form.photoUrl.value;
+        const password = form.password.value;
+        // const confirmPassword = form.confirmPassword.value;
+
+        // create user in the firebase
+        createUser(email, password)
+        .then(result => {
+            setUser(result.user)
+            console.log(result.user.email);
+        })
+        .catch(error =>{
+            alert(error)
+        })
+    }
     return (
         <div>
             <div className="flex flex-col max-w-md p-6 bg-black mx-auto mt-[100px] text-white rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800">
                 <div className="mb-8 text-center">
-                    <h1 className="my-3 text-4xl font-bold">Sign Up</h1>
+                    <h1 className="my-3 text-4xl font-bold">Register</h1>
                     <p className="text-sm dark:text-gray-600">Please Registration your account</p>
                 </div>
-                <form noValidate="" action="" className="space-y-12">
+                <form onSubmit={handleRegistration} className="space-y-12">
                     <div className="space-y-4">
                         <div>
                             <label htmlFor="name" className="block mb-2 text-sm">Name</label>
@@ -29,12 +53,12 @@ const Register = () => {
                             </div>
                             <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
                         </div>
-                        <div>
+                        {/* <div>
                             <div className="flex justify-between mb-2">
                                 <label htmlFor="confirmPassword" className="text-sm">Confirm Password</label>
                             </div>
                             <input type="password" name="confirmPassword" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
-                        </div>
+                        </div> */}
                     </div>
                     <div className="space-y-2">
                         <div>

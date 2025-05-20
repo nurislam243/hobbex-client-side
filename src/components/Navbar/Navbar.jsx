@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../../context/AuthContext';
+import NavbarEnd from '../NavbarEnd/NavbarEnd';
 
 const Navbar = () => {
+    const {user} = useContext(AuthContext);
+    console.log(user);
     return (
         <div className="bg-base-100 shadow-sm">
             <nav className="navbar md:container mx-auto">
@@ -24,16 +28,14 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                    <li><NavLink to={'/'}>Home</NavLink></li>
-                    <li><NavLink to={'/allGroups'}>AllGroups</NavLink></li>
-                    <li><NavLink to={'/createGroup'}>Create Group</NavLink></li>
-                    <li><NavLink to={'/myGroups'}>My Groups</NavLink></li>
-                    <li><NavLink to={'/login'}>Login</NavLink></li>
-                    
+                        <li><NavLink to={'/'}>Home</NavLink></li>
+                        <li><NavLink to={'/allGroups'}>AllGroups</NavLink></li>
+                        <li><NavLink to={'/createGroup'}>Create Group</NavLink></li>
+                        <li><NavLink to={'/myGroups'}>My Groups</NavLink></li>                   
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <NavLink to={'/signup'} className="btn">Login</NavLink>
+                    <NavbarEnd></NavbarEnd>
                 </div>
             </nav>
         </div>
