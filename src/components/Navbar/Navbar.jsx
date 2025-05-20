@@ -19,9 +19,11 @@ const Navbar = () => {
                         <li><a>Item 3</a></li>
                     </ul>
                     </div>
-                    <div className="flex">
-                        <img src='/logoHobbex1.png' className='w-8' alt="" />
-                        <Link to={'/'} className="text-4xl font-bold text-primary">Hobbex</Link>
+                    <div className="flex gap-1 items-center">
+                        <div className="w-9 h-9 -mb-2">
+                            <img src='/logoHobbex1.png' className='' alt="" />
+                        </div>
+                        <Link to={'/'} className="text-3xl font-bold text-primary">HobbEx</Link>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
