@@ -1,18 +1,14 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { Link } from 'react-router';
+import NavEndAvatar from '../../ui/NavEndAvatar/NavEndAvatar';
 
 const NavbarEnd = () => {
-    const {user, handleLogout} = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
     return (
-        <div>
+        <div>           
             {
-                user ? <div>
-                    <img src={user.photoURL} alt="" />
-                    <button onClick={handleLogout}>Logout</button>
-                    
-                </div> :
-                        <Link to={'/login'}>Login</Link>                       
+                user ? <NavEndAvatar></NavEndAvatar> : <Link to={'/login'}>Login</Link>                       
             }          
         </div>
     );

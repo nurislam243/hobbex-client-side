@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../context/AuthContext';
 import { toast } from 'react-toastify';
 
 const Register = () => {
-    const {createUser, setUser} = useContext(AuthContext);
+    const {createUser, setUser, user} = useContext(AuthContext);
+    const navigate = useNavigate();
+    console.log(user);
 
     const handleRegistration = (e) =>{
         e.preventDefault();
@@ -12,19 +14,12 @@ const Register = () => {
         // const formData = new FormData (form);
         const name = form.name.value;
         const email = form.email.value;
-        const photoUrl = form.photoUrl.value;
+        const profileImage = form.photoUrl.value;
         const password = form.password.value;
         // const confirmPassword = form.confirmPassword.value;
 
         // create user in the firebase
-        createUser(email, password)
-        .then(result => {
-            setUser(result.user)
-            console.log(result.user.email);
-        })
-        .catch(error =>{
-            alert(error)
-        })
+        createUser(email, password, name, profileImage, navigate)
     }
     return (
         <div>

@@ -1,16 +1,52 @@
 import React, { useState } from 'react';
 import { AuthContext } from './AuthContext';
-import { createUserWithEmailAndPassword, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth';
 import { auth } from '../firebase/firebase.config';
 import Swal from 'sweetalert2';
 
 const AuthProvider = ({children}) => {
-    const [user, setUser] = useState("nur islam");
+    const [user, setUser] = useState(null);
 
     // create user using email and password
-    const createUser = (email, password) =>{
-        return createUserWithEmailAndPassword(auth, email, password)
+    const createUser = (email, password, name, profileImage, navigate) => {
+        createUserWithEmailAndPassword(auth, email, password)
+       .then((userCredential) => { 
+        const passwordUser = userCredential.user;
+        setUser(passwordUser);
+
+        // update profile
+        updateProfile(auth.currentUser, {
+          displayName: name, photoURL: profileImage
+        }).then(() => {
+            setUser({
+            ...auth.currentUser, name, profileImage
+            });
+        }).catch((error) => {
+          // An error occurred
+          // ...
+        });
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Registration Successful!',
+          text: 'Welcome . Your account has been created successfully.',
+        });
+
+        navigate('/')
+        })
+
+        .catch((error) => {
+            if (error.code === 'auth/email-already-in-use') {
+                Swal.fire('Email Already Registered', 'This email is already registered! Please try logging in.', 'error');
+              } else if (error.code === 'auth/invalid-email') {
+                Swal.fire('Invalid Email', 'Please enter a valid email address.', 'error');
+              } else {
+                Swal.fire('Error', error.message, 'error');
+              }
+        });
+
     }
+
 
 
     //handle logout

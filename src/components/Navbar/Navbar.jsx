@@ -5,7 +5,6 @@ import NavbarEnd from '../NavbarEnd/NavbarEnd';
 
 const Navbar = () => {
     const {user} = useContext(AuthContext);
-    console.log(user);
     return (
         <div className="bg-base-100 shadow-sm">
             <nav className="navbar md:container mx-auto">
