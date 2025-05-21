@@ -1,18 +1,45 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const CreateGroup = () => {
+  const {user} = useContext(AuthContext);
+  console.log(user);
+
+  const handleCreateGroup = (e) =>{
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const newGroup = Object.fromEntries(formData.entries());
+    console.log(newGroup);
+
+
+    // send create group data to the db
+    fetch('http://localhost:3000/groups', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(newGroup)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log("after adding group to db", data);
+    })
+    
+  }
+
   return (
     <div className=" p-6 bg-base-100 shadow-xl rounded-xl my-10">
       <h2 className="text-3xl font-bold mb-6 text-center text-primary">Create a New Hobby Group</h2>
 
-      <form className="space-y-7">
+      <form onSubmit={handleCreateGroup} className="space-y-7">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
             {/* Group Name */}
             <div className="form-control w-full">
                 <label className="label">
                     <span className="label-text">Group Name</span>
                 </label>
-                <input type="text" placeholder="Enter group name" className="input input-bordered w-full" />
+                <input type="text" name="groupName" placeholder="Enter group name" className="input input-bordered w-full" />
             </div>
 
             {/* Hobby Category */}
@@ -20,7 +47,7 @@ const CreateGroup = () => {
                 <label className="label">
                     <span className="label-text">Hobby Category</span>
                 </label>
-                <select className="select select-bordered w-full">
+                <select name="hobbyCategory" className="select select-bordered w-full">
                     <option disabled selected>Pick a category</option>
                     <option>Drawing & Painting</option>
                     <option>Photography</option>
@@ -38,7 +65,7 @@ const CreateGroup = () => {
             <label className="label">
                 <span className="label-text">Meeting Location</span>
             </label>
-            <input type="text" placeholder="Location" className="input input-bordered w-full" />
+            <input type="text" name="metingLocation" placeholder="Location" className="input input-bordered w-full" />
             </div>
 
             {/* Max Members */}
@@ -46,7 +73,7 @@ const CreateGroup = () => {
             <label className="label">
                 <span className="label-text">Max Members</span>
             </label>
-            <input type="number" placeholder="e.g. 10" className="input input-bordered w-full" />
+            <input type="number" name="maxMembers" placeholder="e.g. 10" className="input input-bordered w-full" />
             </div>
 
             {/* Start Date */}
@@ -54,7 +81,7 @@ const CreateGroup = () => {
             <label className="label">
                 <span className="label-text">Start Date</span>
             </label>
-            <input type="date" className="input input-bordered w-full" />
+            <input type="date" name="startDate" className="input input-bordered w-full" />
             </div>
 
             {/* Image URL */}
@@ -62,7 +89,7 @@ const CreateGroup = () => {
             <label className="label">
                 <span className="label-text">Image URL</span>
             </label>
-            <input type="url" placeholder="https://example.com/image.jpg" className="input input-bordered w-full" />
+            <input type="url" name="imageURL" placeholder="https://example.com/image.jpg" className="input input-bordered w-full" />
             </div>
 
             {/* User Name (readonly) */}
@@ -70,7 +97,7 @@ const CreateGroup = () => {
             <label className="label">
                 <span className="label-text">Your Name</span>
             </label>
-            <input type="text" className="input input-bordered w-full" value="Your Name" readOnly />
+            <input type="text" name="userName" className="input input-bordered w-full" defaultValue={user.displayName} readOnly />
             </div>
 
             {/* User Email (readonly) */}
@@ -78,16 +105,16 @@ const CreateGroup = () => {
             <label className="label">
                 <span className="label-text">Your Email</span>
             </label>
-            <input type="email" className="input input-bordered w-full" value="you@example.com" readOnly />
+            <input type="email" name="userEmail" className="input input-bordered w-full" defaultValue={user.email} readOnly />
             </div>
         </div>
 
-                {/* Description */}
+        {/* Description */}
         <div className="form-control md:col-span-2 w-full">
           <label className="label">
             <span className="label-text">Description</span>
           </label>
-          <textarea className="textarea textarea-bordered w-full" rows="3" placeholder="Write a short description..."></textarea>
+          <textarea name="description" className="textarea textarea-bordered w-full" rows="3" placeholder="Write a short description..."></textarea>
         </div>
 
         {/* Submit Button */}
