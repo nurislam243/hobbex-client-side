@@ -40,7 +40,9 @@ import Spinner from "../ui/Spinner/Spinner";
         },
         {
           path: '/myGroups',
-          element: <MyGroups></MyGroups>
+          loader: () => fetch('http://localhost:3000/groups'),
+          hydrateFallbackElement: <Spinner></Spinner>,
+          element: <PrivateRoute><MyGroups></MyGroups></PrivateRoute>
         },
         {
           path: '/updateGroup',
