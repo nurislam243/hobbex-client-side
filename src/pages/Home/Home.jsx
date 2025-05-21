@@ -1,23 +1,19 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Banner from '../../components/Banner/Banner';
-import ThemeControler from '../../ui/ThemeControler/ThemeControler';
-import Spinner from '../../ui/Spinner/Spinner';
-import { AuthContext } from '../../context/AuthContext';
 import FeaturedSection from '../../components/FeaturedSection/FeaturedSection';
 import BenefitsSection from '../../components/BenefitsSection/BenefitsSection';
 import Testimonials from '../../components/Testimonials/Testimonials';
+import { useLoaderData } from 'react-router';
 
 const Home = () => {
-    const {user} = useContext(AuthContext);
-    console.log(user);
+    const groups = useLoaderData();
+    console.log(groups);
     return (
         <div>
             <Banner></Banner>
             <FeaturedSection></FeaturedSection>
             <BenefitsSection></BenefitsSection>
             <Testimonials></Testimonials>
-
-
         </div>
     );
 };

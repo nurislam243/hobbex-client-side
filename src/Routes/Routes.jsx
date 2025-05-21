@@ -10,6 +10,7 @@ import Register from "../pages/Register/Register";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import MyGroups from "../pages/MyGroups/MyGroups";
 import NotFound from "../pages/NotFound/NotFound";
+import Spinner from "../ui/Spinner/Spinner";
 
  export const router = createBrowserRouter([
     {
@@ -19,6 +20,8 @@ import NotFound from "../pages/NotFound/NotFound";
       children: [
         {
             path: "/",
+            loader: () => fetch('http://localhost:3000/groups'),
+            hydrateFallbackElement: <Spinner></Spinner>,
             Component: Home
         },
         {
