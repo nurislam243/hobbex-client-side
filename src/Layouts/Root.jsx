@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify';
 
 const Root = () => {
     return (
-        <div>
+        <div className='inter-font @container'>
             <Navbar></Navbar>
             <div className="min-h-[80vh] md:container mx-auto">
                 <Outlet></Outlet>

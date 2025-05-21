@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @import "tailwindcss";
 @plugin "daisyui";
 
@@ -6,38 +8,53 @@
     default: true;
     prefersdark: false;
     color-scheme: light;
-    --color-base-100: oklch(98% 0.01 280);
-    --color-base-200: oklch(95% 0.02 280);
-    --color-base-300: oklch(92% 0.03 280);
-    --color-base-content: oklch(20% 0.05 280);
+    /* Base colors - light backgrounds and content */
+    --color-base-100: oklch(98% 0.01 280); /* lightest background */
+    --color-base-200: oklch(95% 0.015 280);
+    --color-base-300: oklch(92% 0.02 280);
+    --color-base-content: oklch(20% 0.05 280); /* dark text on base */
 
-    --color-primary: oklch(80.5% 0.24 155.3);         
-    --color-primary-content: oklch(20% 0.03 155.3);
+    /* Primary color based on #00E976 (a bright green) */
+    --color-primary: oklch(80% 0.25 145); /* base green tone */
+    --color-primary-content: oklch(20% 0.03 145); /* dark text for contrast */
 
-    --color-secondary: oklch(66.45% 0.281 10.88);     
-    --color-secondary-content: oklch(98% 0.01 10.88);
+    /* Secondary color based on #FC17A6 (pink) */
+    --color-secondary: oklch(72% 0.28 20); /* vibrant pink tone */
+    --color-secondary-content: oklch(98% 0.01 20); /* white/light text */
 
-    --color-accent: oklch(70% 0.22 190);          
+    /* Accent color - complimentary to primary (greenish-blue tone) */
+    --color-accent: oklch(75% 0.21 190);
     --color-accent-content: oklch(98% 0.01 190);
 
-    --color-neutral: oklch(35% 0.04 250);
-    --color-neutral-content: oklch(98% 0.01 250);
+    /* Neutral - used for body text, borders */
+    --color-neutral: oklch(40% 0.03 250); /* dark gray-blue */
+    --color-neutral-content: oklch(98% 0.01 250); /* light text on dark */
 
-    --color-info: oklch(65% 0.22 220);
+    /* Info - calm blue tone */
+    --color-info: oklch(70% 0.23 220);
     --color-info-content: oklch(98% 0.01 220);
 
-    --color-success: oklch(65% 0.25 140);
+    /* Success - green tone closer to primary */
+    --color-success: oklch(70% 0.24 140);
     --color-success-content: oklch(98% 0.01 140);
 
-    --color-warning: oklch(80% 0.25 80);
-    --color-warning-content: oklch(20% 0.05 80);
+    /* Warning - yellow/orange tone */
+    --color-warning: oklch(82% 0.24 85);
+    --color-warning-content: oklch(20% 0.05 85);
 
-    --color-error: oklch(60% 0.28 30);
+    /* Error - vivid red tone */
+    --color-error: oklch(62% 0.28 30);
     --color-error-content: oklch(98% 0.01 30);
   
   }
-  
 
+.poppins-font{
+  font-family: "Poppins", sans-serif;
+}
+
+.inter-font{
+  font-family: "Inter", sans-serif;
+}
 
 .loader {
   width: 48px;

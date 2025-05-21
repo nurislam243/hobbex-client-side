@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../context/AuthContext';
+import { toast } from 'react-toastify';
 // import { toast } from 'react-toastify';
 
 const Register = () => {
@@ -15,6 +16,35 @@ const Register = () => {
         const email = form.email.value;
         const profileImage = form.photoUrl.value;
         const password = form.password.value;
+
+        if (name === "") {
+            toast.error('⚠️ Please enter your name!', { position: "top-center" });
+            return;
+        }
+        if (email === "") {
+            toast.error('⚠️ Please enter your email address!', { position: "top-center" });
+            return;
+        }
+        if(profileImage === ""){
+            toast.error('⚠️ Please enter your profile URL', { position: "top-center" });
+            return;
+        }
+        if (!/\d/.test(password)) {
+            toast.error('⚠️ Password must include at least one number (0-9).', { position: "top-center" });
+            return;
+        }
+        if (!/[a-z]/.test(password)) {
+            toast.error('⚠️ Password must include at least one lowercase letter (a-z).', { position: "top-center" });
+            return;
+        }
+        if (!/[A-Z]/.test(password)) {
+            toast.error('⚠️ Password must include at least one uppercase letter (A-Z).', { position: "top-center" });
+            return;
+        }
+        if (password.length < 6) {
+            toast.error('⚠️ Password must be at least 6 characters long.', { position: "top-center" });
+            return;
+        }
         // const confirmPassword = form.confirmPassword.value;
 
         // create user in the firebase
