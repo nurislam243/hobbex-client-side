@@ -26,6 +26,8 @@ import Spinner from "../ui/Spinner/Spinner";
         },
         {
           path: '/groups',
+          loader: () => fetch('http://localhost:3000/groups'),
+          hydrateFallbackElement: <Spinner></Spinner>,
           Component: AllGroups
         },
         {

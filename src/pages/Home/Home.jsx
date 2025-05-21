@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <FeaturedSection></FeaturedSection>
+            <FeaturedSection groups={groups}></FeaturedSection>
             <BenefitsSection></BenefitsSection>
             <Testimonials></Testimonials>
         </div>
