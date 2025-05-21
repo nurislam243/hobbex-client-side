@@ -8,8 +8,10 @@ const Root = () => {
     return (
         <div className='inter-font @container'>
             <Navbar></Navbar>
-            <div className="min-h-[80vh] md:container mx-auto">
-                <Outlet></Outlet>
+            <div className="bg-base-100">
+                <div className="min-h-[80vh] md:container mx-auto">
+                    <Outlet></Outlet>
+                </div>
             </div>
             <Footer></Footer>
             <ToastContainer />

@@ -6,14 +6,14 @@ const NavEndAvatar = () => {
     console.log(user);
 
     return (
-        <div className='flex gap-2'>
+        <div className='flex gap-3 items-center'>
             <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
                  {
-                    user ? <img src={user.photoURL} className='h-[55px] w-[55px] rounded-full' alt="" /> : ""
+                    user ? <img src={user.photoURL} className='h-[40px] w-[40px] md:h-[44px] md:w-[44px] lg:h-[47px] lg:w-[47px] rounded-full' alt="" /> : ""
                  }
             </div>
            
-            <button onClick={handleLogout}>Logout</button>           
+            <button className='btn btn-outline' onClick={handleLogout}>Logout</button>           
         </div>
     );
 };

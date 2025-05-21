@@ -25,7 +25,7 @@ const Navbar = () => {
                             <div className="w-9 h-9 -mb-1">
                                 <img src='/logoHobbex1.png' className='' alt="" />
                             </div>
-                            <Link to={'/'} className="text-3xl hidden @min-[335px]:flex font-bold text-primary">HobbEx</Link>
+                            <Link to={'/'} className="text-3xl hidden @min-[393px]:flex font-bold text-primary">HobbEx</Link>
                         </div>
                     </div>
                     <div className="hidden lg:flex ml-10 xl:ml-11 text-base-content/70 font-medium">
