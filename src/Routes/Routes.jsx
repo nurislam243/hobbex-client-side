@@ -9,11 +9,13 @@ import UpdateGroup from "../pages/UpdateGroup/UpdateGroup";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import MyGroups from "../pages/MyGroups/MyGroups";
+import NotFound from "../pages/NotFound/NotFound";
 
  export const router = createBrowserRouter([
     {
       path: "/",
       Component: Root,
+      errorElement: <NotFound></NotFound>,
       children: [
         {
             path: "/",

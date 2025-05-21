@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router';
 import NavbarEnd from '../NavbarEnd/NavbarEnd';
+import ThemeControler from '../../ui/ThemeControler/ThemeControler';
 
 const Navbar = () => {
     return (
@@ -38,7 +39,8 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                <div className="navbar-end">
+                <div className="navbar-end gap-2">
+                    <ThemeControler></ThemeControler>
                     <NavbarEnd></NavbarEnd>
                 </div>
             </nav>

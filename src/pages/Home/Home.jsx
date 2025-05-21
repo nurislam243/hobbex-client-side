@@ -12,7 +12,6 @@ const Home = () => {
     console.log(user);
     return (
         <div>
-            <ThemeControler></ThemeControler>
             <Banner></Banner>
             <FeaturedSection></FeaturedSection>
             <BenefitsSection></BenefitsSection>
