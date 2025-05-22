@@ -7,7 +7,8 @@ import Swal from 'sweetalert2';
 const AuthProvider = ({children}) => {
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
-    console.log("photoURL", user?.photoURL);
+    // console.log("photoURL", user?.photoURL);
+    console.log(user);
 
     // create user using email and password
     const createUser = (email, password, name, profileImage, navigate) => {

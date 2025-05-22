@@ -31,7 +31,9 @@ import Spinner from "../ui/Spinner/Spinner";
           Component: AllGroups
         },
         {
-          path: '/groupDetails',
+          path: '/group/:id',
+          loader: ({ params }) => fetch(`http://localhost:3000/groups/${params.id}`) ,
+          hydrateFallbackElement: <Spinner></Spinner>,
           element: <PrivateRoute><GroupDetails></GroupDetails></PrivateRoute>
         },
         {
@@ -45,7 +47,9 @@ import Spinner from "../ui/Spinner/Spinner";
           element: <PrivateRoute><MyGroups></MyGroups></PrivateRoute>
         },
         {
-          path: '/updateGroup',
+          path: '/updateGroup/:id',
+          loader: ({ params }) => fetch(`http://localhost:3000/groups/${params.id}`) ,
+          hydrateFallbackElement: <Spinner></Spinner>,
           element: <PrivateRoute><UpdateGroup></UpdateGroup></PrivateRoute>
         },
         {
