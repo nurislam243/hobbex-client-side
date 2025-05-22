@@ -38,7 +38,7 @@ import Spinner from "../ui/Spinner/Spinner";
         },
         {
           path: '/createGroup',
-          Component: CreateGroup
+          element: <PrivateRoute><CreateGroup></CreateGroup></PrivateRoute>
         },
         {
           path: '/myGroups',

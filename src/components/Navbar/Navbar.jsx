@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router';
 import NavbarEnd from '../NavbarEnd/NavbarEnd';
-import ThemeControler from '../../ui/ThemeControler/ThemeControler';
+import { AuthContext } from '../../context/AuthContext';
+import { CiDark, CiLight } from 'react-icons/ci';
 
 const Navbar = () => {
+    const { theme, setTheme } = useContext(AuthContext);
     return (
         <div className="bg-base-300 py-[8px] lg:py-[12px] sticky top-0 z-20">
             <nav className="navbar md:container mx-auto">
@@ -40,7 +42,11 @@ const Navbar = () => {
                 </div>
 
                 <div className="navbar-end gap-2">
-                    <ThemeControler></ThemeControler>
+                    <button onClick={() => setTheme(!theme)} className='cursor-pointer'>
+                        {
+                            theme ? <CiLight size={40} /> : <CiDark size={40} />
+                        }
+                    </button>
                     <NavbarEnd></NavbarEnd>
                 </div>
             </nav>

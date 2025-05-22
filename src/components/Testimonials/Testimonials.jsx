@@ -81,7 +81,7 @@ const Testimonials = () => {
               key={idx}
               className="@min-[1536px]:w-[371px] snap-start bg-base-100 border border-base-content/50 rounded-md p-6 shadow hover:shadow-xl transition duration-300 flex-shrink-0"
             >
-              <FaQuoteLeft className="text-2xl text-primary mb-3" />
+              <FaQuoteLeft className="text-2xl text-accent mb-3" />
               <div className="@min-[1536px]:min-h-[120px]">
                 <p className="text-gray-700 mb-4">{testimonial.feedback}</p>
               </div>

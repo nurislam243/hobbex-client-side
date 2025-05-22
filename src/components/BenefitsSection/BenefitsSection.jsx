@@ -4,37 +4,37 @@ import { FaUsers, FaLock, FaBolt, FaGlobe, FaLightbulb } from 'react-icons/fa';
 const BenefitsSection = () => {
   const features = [
   {
-    icon: <FaUsers className="text-3xl text-primary" />,
+    icon: <FaUsers className="text-3xl text-accent" />,
     title: 'Hobby-Focused Communities',
     description:
       'Connect with people who are passionate about the same hobbies as you—whether it’s photography, gaming, gardening, or tech innovations. Hobbex ensures everyone finds their perfect circle.',
   },
   {
-    icon: <FaLock className="text-3xl text-primary" />,
+    icon: <FaLock className="text-3xl text-accent" />,
     title: 'Secure & Moderated Environment',
     description:
       'Our platform is carefully monitored to maintain a safe, friendly, and respectful space. Each group follows community guidelines to provide a trustworthy user experience.',
   },
   {
-    icon: <FaBolt className="text-3xl text-primary" />,
+    icon: <FaBolt className="text-3xl text-accent" />,
     title: 'Quick & Seamless Setup',
     description:
       'Get started in minutes! Whether you’re joining a group or creating your own, our intuitive interface ensures a hassle-free experience every time.',
   },
   {
-    icon: <FaGlobe className="text-3xl text-primary" />,
+    icon: <FaGlobe className="text-3xl text-accent" />,
     title: 'Discover Local Talent & Events',
     description:
       'Explore groups and meetups happening in your local area. Share your passion in real-life gatherings, workshops, and community-driven events.',
   },
   {
-    icon: <FaLightbulb className="text-3xl text-primary" />,
+    icon: <FaLightbulb className="text-3xl text-accent" />,
     title: 'Personal & Skill Development',
     description:
       'Collaborate, learn, and grow alongside skilled hobbyists. From beginner to expert, every member gets the chance to enhance their knowledge and creativity.',
   },
   {
-    icon: <FaUsers className="text-3xl text-primary" />,
+    icon: <FaUsers className="text-3xl text-accent" />,
     title: 'Supportive Networking Space',
     description:
       'Build lasting connections and friendships. Hobbex is not just about hobbies; it’s about community, encouragement, and shared experiences that matter.',

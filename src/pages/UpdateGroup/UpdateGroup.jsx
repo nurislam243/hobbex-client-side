@@ -70,7 +70,7 @@ const CreateGroup = () => {
                   <option>Programming</option>
                   <option>Gardening</option>
                   <option>Music & Instruments</option>
-                  <option>Traveling</option>
+                  <option>Travelling</option>
                 </select>
             </div>
 
@@ -133,7 +133,7 @@ const CreateGroup = () => {
 
         {/* Submit Button */}
         <div className="md:col-span-2 text-center mt-4 w-full">
-          <button type="submit" className="btn btn-primary w-full">Update Group</button>
+          <button type="submit" className="btn btn-primary text-lg text-white w-full">Update Group</button>
         </div>
       </form>
     </div>
