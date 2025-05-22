@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router';
 
 const AllGroups = () => {
   const groups = useLoaderData();
+  const [sortGroups, setSortGroups] = useState(groups);
+  const [sortState, setSortState] = useState(true);
+
+  useEffect(() => {
+    if (sortState) {
+      const sorted = groups.slice(0, 9);
+      setSortGroups(sorted);
+    } else {
+      setSortGroups(groups);
+    }
+  }, [sortState, groups]);
 
   return (
     <section className="py-10">
@@ -11,7 +22,7 @@ const AllGroups = () => {
       </h2>
 
       <div className="flex flex-col @min-[520px]:grid @min-[520px]:grid-cols-2 @min-[1280px]:grid-cols-3 gap-6">
-        {groups.map((group) => (
+        {sortGroups.map((group) => (
           <div
             key={group._id}
             className="flex flex-col sm:flex-row bg-white rounded shadow-md hover:shadow-xl transition duration-300 overflow-hidden"
@@ -28,7 +39,7 @@ const AllGroups = () => {
             {/* Content Right */}
             <div className="p-5 flex flex-col justify-between sm:w-2/3">
               <div>
-                <span className="inline-block bg-primary/20 text-primary px-2 py-1 rounded text-xs font-semibold mb-2">
+                <span className="inline-block bg-accent/20 text-accent px-2 py-1 rounded text-xs font-semibold mb-2">
                   {group.hobbyCategory}
                 </span>
                 <h3 className="text-xl font-bold text-neutral-800 mb-1">{group.groupName}</h3>
@@ -40,12 +51,19 @@ const AllGroups = () => {
               </div>
               <div className="mt-4">
                 <Link to={`/group/${group._id}`}>
-                  <button className="btn btn-primary btn-sm">See More</button>
+                  <button className="btn btn-primary text-white btn-sm">See More</button>
                 </Link>
               </div>
             </div>
           </div>
         ))}
+      </div>
+      <div className="flex justify-center mt-6">
+        <button className='btn btn-secondary md:text-lg' onClick={() => setSortState(!sortState)}>
+          {
+            sortState ? <span>View All</span> : <span>View Less</span>
+          }
+        </button>
       </div>
     </section>
   );

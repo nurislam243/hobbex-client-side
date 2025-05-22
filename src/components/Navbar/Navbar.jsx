@@ -5,7 +5,7 @@ import ThemeControler from '../../ui/ThemeControler/ThemeControler';
 
 const Navbar = () => {
     return (
-        <div className="bg-base-300 py-[8px] lg:py-[11px] sticky top-0 z-20">
+        <div className="bg-base-300 py-[8px] lg:py-[12px] sticky top-0 z-20">
             <nav className="navbar md:container mx-auto">
                 <div className="navbar-start w-full">
                     <div className="flex items-center">

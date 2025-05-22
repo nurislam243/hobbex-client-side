@@ -59,7 +59,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="my-16 px-4 md:px-10 lg:px-20">
+    <section className="my-16">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-primary">
         What Our Users Say
       </h2>
@@ -76,22 +76,24 @@ const Testimonials = () => {
           ref={sliderRef}
           className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hidden"
         >
-          {testimonials.map((t, idx) => (
+          {testimonials.map((testimonial, idx) => (
             <div
               key={idx}
-              className="min-w-[300px] max-w-[320px] snap-start bg-base-100 border rounded-xl p-6 shadow hover:shadow-xl transition duration-300 flex-shrink-0"
+              className="@min-[1536px]:w-[371px] snap-start bg-base-100 border border-base-content/50 rounded-md p-6 shadow hover:shadow-xl transition duration-300 flex-shrink-0"
             >
               <FaQuoteLeft className="text-2xl text-primary mb-3" />
-              <p className="text-gray-700 mb-4">{t.feedback}</p>
+              <div className="@min-[1536px]:min-h-[120px]">
+                <p className="text-gray-700 mb-4">{testimonial.feedback}</p>
+              </div>
               <div className="flex items-center gap-4">
                 <img
-                  src={t.image}
-                  alt={t.name}
+                  src={testimonial.image}
+                  alt={testimonial.name}
                   className="w-12 h-12 rounded-full object-cover border-2 border-primary"
                 />
                 <div>
-                  <h4 className="font-semibold">{t.name}</h4>
-                  <p className="text-sm text-gray-500">{t.role}</p>
+                  <h4 className="font-semibold">{testimonial.name}</h4>
+                  <p className="text-sm text-gray-500">{testimonial.role}</p>
                 </div>
               </div>
             </div>

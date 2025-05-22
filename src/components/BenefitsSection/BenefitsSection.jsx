@@ -44,7 +44,7 @@ const BenefitsSection = () => {
 
   return (
     <section className="py-16 bg-base-100">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-4">
           Why Choose Hobbex?
         </h2>
@@ -56,7 +56,7 @@ const BenefitsSection = () => {
           {features.map((item, index) => (
             <div
               key={index}
-              className="bg-base-200 p-6 rounded-2xl shadow hover:shadow-lg transition"
+              className="bg-base-200 p-6 rounded shadow hover:shadow-lg transition min-h-[240px]"
             >
               <div className="mb-4">{item.icon}</div>
               <h3 className="text-xl font-semibold text-secondary mb-2">{item.title}</h3>

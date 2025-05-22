@@ -9,8 +9,8 @@ const NavbarEnd = () => {
         <div>           
             {
                 user ? <NavEndAvatar></NavEndAvatar> : 
-                <div className='flex gap-x-3'><Link className='btn btn-outline' to={'/login'}>Login</Link>
-                <Link className='btn btn-primary hidden @min-[437px]:flex' to="/register">Register</Link></div>                     
+                <div className='flex gap-x-3'><Link className='btn btn-outline btn-primary hover:text-white' to={'/login'}>Login</Link>
+                <Link className='btn btn-primary text-white hidden @min-[437px]:flex' to="/registration">Register</Link></div>                     
             }          
         </div>
     );

@@ -70,6 +70,7 @@ const CreateGroup = () => {
                   <option>Programming</option>
                   <option>Gardening</option>
                   <option>Music & Instruments</option>
+                  <option>Traveling</option>
                 </select>
             </div>
 

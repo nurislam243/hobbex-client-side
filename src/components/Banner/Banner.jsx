@@ -6,16 +6,47 @@ import 'swiper/css/pagination';
 import { Link } from 'react-router';
 import { Typewriter } from 'react-simple-typewriter';
 
+const sliderCategories = [
+  {
+    bannerImg: "https://i.ibb.co/0jV41Tk5/Guest-with-camera-gear-on-safari-in-Botswana-Pangolin-Photo-Safaris-scaled.webp",
+    category: "Photography",
+    headline: "Capture Life Through the Lens",
+    description: "Join photography lovers to explore creativity, learn new techniques, and capture beautiful moments together."
+  },
+  {
+    bannerImg: "https://i.ibb.co/S4wph4Rc/WUQFsu-Weup4y-VTTiv-CMXKe.jpg",
+    category: "Video Gaming",
+    headline: "Level Up Your Gaming Experience",
+    description: "Team up with gamers for competitive fun, co-op play, and exciting discussions about your favorite titles."
+  },
+  {
+    bannerImg: "https://i.ibb.co/VWPS6SjT/Adobe-Stock-1060693368.webp",
+    category: "Gardening",
+    headline: "Grow Green, Live Clean",
+    description: "Share tips, grow plants, and enjoy the peace of gardening with a like-minded local group."
+  },
+  {
+    bannerImg: "https://i.ibb.co/B5Cz0zc2/istockphoto-1439425791-612x612.jpg",
+    category: "Programming",
+    headline: "Code, Build, Innovate",
+    description: "Connect with developers, build cool projects, and upgrade your coding skills in a fun environment."
+  },
+  {
+    bannerImg: "https://i.ibb.co/5WYRR2Bb/360-F-818523251-T67-ETZ2-Dx8-YMq9a-QKg-Te-Rw4ok5m-Caeou.jpg",
+    category: "Travelling",
+    headline: "Explore the World Together",
+    description: "Discover new places, plan trips, and share travel stories with fellow explorers and adventurers."
+  },
+  {
+    bannerImg: "https://i.ibb.co/ksfVdNKG/fishing-silhouette-photography-backlighting-recreation-outdoors-53876-518519.jpg",
+    category: "Fishing",
+    headline: "Catch, Relax, and Connect",
+    description: "Join fellow fishing lovers, plan trips, share tips, and enjoy the peace of nature together."
+  }
+];
+
+
 const Banner = () => {
-
-    const featuredItems = [
-    'Photography Club',
-    'JavaScript Group',
-    'Cycling Team',
-    'Art & Crafts',
-    'Gardening Club',
-  ];
-
   return (
     <div className="mx-auto rounded-md shadow-2xl">
 
@@ -29,10 +60,10 @@ const Banner = () => {
               <p className="text-lg md:text-xl text-base-content/60">
                 Discover, connect, and grow with hobby groups in your area.
               </p>
-              <h2 className='text-2xl text-base-content/80 font-medium mt-4'>Top Hobby Groups : {' '}
-                <span className="text-secondary/70">
+              <h2 className='text-2xl text-base-content/80 font-medium mt-4'>Top Groups Category: {' '}
+                <span className="text-secondary/80 font-bold">
                   <Typewriter
-                    words={['Photography', 'Gaming', 'Cooking', 'Gardening', 'Traveling', 'Programming']}
+                    words={['Photography','Running','Writing', 'Video Gaming', 'Cooking', 'Gardening', 'Programming', 'Fishing']}
                     loop={true}
                     cursor
                     cursorStyle="|"
@@ -58,85 +89,31 @@ const Banner = () => {
         autoplay={{ delay: 3000 }}
         pagination={{ clickable: true }}
       >
-           <SwiperSlide>
-                      <div
-                        className="hero h-[220px] @min-[500px]:h-[290px] @min-[650px]:h-[320px] @min-[780px]:h-[340px] @min-[900px]:h-[360px] @min-[1100px]:h-[400px] object-cover"
-                        style={{
-                          backgroundImage:"url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)"
-                        }}
-                      >
-                        <div className="hero-overlay"></div>
-                        <div className="hero-content text-white text-center">
-                          <div className="max-w-lg space-y-0">
-                            <h1 className="mb-2 sm:mb-5 text-2xl sm:text-4xl font-extrabold text-white lg:text-5xl">Name</h1>
-                            <h4 className='text-sm font-medium text-gray-200'>Gaming</h4>
-                            <p className='text-lg font-semibold text-yellow-400'> ⭐ 4.5</p>
-                            
-                            <p className="hidden @min-[540px]:block text-gray-300">
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus qui aspernatur nihil sed ut, magni alias, amet repudiandae iste illo iusto odit expedita.
-                            </p>
-                            <p className='text-sm sm:[17px] font-medium text-green-400 mb2 sm:mb-5'> Downloads</p>
-                            <Link to={'/latest'} className="btn btn-accent sm:text-lg">Explore Latest App</Link>
-                          </div>
-                        </div>
-                      </div>
-
-              
+           {
+            sliderCategories.map(slider => (
+              <SwiperSlide>
+              <div
+                className="hero h-[220px] @min-[500px]:h-[290px] @min-[650px]:h-[320px] @min-[780px]:h-[340px] @min-[900px]:h-[360px] @min-[1100px]:h-[400px] object-cover"
+                style={{
+                  backgroundImage: `url(${slider.bannerImg})`
+                }}
+              >
+                <div className="hero-overlay"></div>
+                <div className=" text-white text-center">
+                  <div className="max-w-lg space-y-0">
+                    <h1 className="mb-2 sm:mb-4 text-2xl sm:text-3xl font-extrabold text-white lg:text-4xl">{slider.category}</h1>
+                    <p>{slider.headline}</p>
+                    
+                    <p className="text-gray-300">
+                      {slider.description}
+                    </p>
+                    <Link to={'/groups'} className="btn btn-secondary btn-outline text-white mt-9 sm:text-lg">View All Groups</Link>
+                  </div>
+                </div>
+              </div>             
            </SwiperSlide>
-        
-           <SwiperSlide>
-                      <div
-                        className="hero h-[220px] @min-[500px]:h-[290px] @min-[650px]:h-[320px] @min-[780px]:h-[340px] @min-[900px]:h-[360px] @min-[1100px]:h-[400px] object-cover"
-                        style={{
-                          backgroundImage:"url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)"
-                        }}
-                      >
-                        <div className="hero-overlay"></div>
-                        <div className="hero-content text-white text-center">
-                          <div className="max-w-lg space-y-0">
-                            <h1 className="mb-2 sm:mb-5 text-2xl sm:text-4xl font-extrabold text-white lg:text-5xl">Name</h1>
-                            <h4 className='text-sm font-medium text-gray-200'>Gaming</h4>
-                            <p className='text-lg font-semibold text-yellow-400'> ⭐ 4.5</p>
-                            
-                            <p className="hidden @min-[540px]:block text-gray-300">
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus qui aspernatur nihil sed ut, magni alias, amet repudiandae iste illo iusto odit expedita.
-                            </p>
-                            <p className='text-sm sm:[17px] font-medium text-green-400 mb2 sm:mb-5'> Downloads</p>
-                            <Link to={'/latest'} className="btn btn-accent sm:text-lg">Explore Latest App</Link>
-                          </div>
-                        </div>
-                      </div>
-
-              
-           </SwiperSlide>
-        
-           <SwiperSlide>
-                      <div
-                        className="hero h-[220px] @min-[500px]:h-[290px] @min-[650px]:h-[320px] @min-[780px]:h-[340px] @min-[900px]:h-[360px] @min-[1100px]:h-[400px] object-cover"
-                        style={{
-                          backgroundImage:"url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)"
-                        }}
-                      >
-                        <div className="hero-overlay"></div>
-                        <div className="hero-content text-white text-center">
-                          <div className="max-w-lg space-y-0">
-                            <h1 className="mb-2 sm:mb-5 text-2xl sm:text-4xl font-extrabold text-white lg:text-5xl">Name</h1>
-                            <h4 className='text-sm font-medium text-gray-200'>Gaming</h4>
-                            <p className='text-lg font-semibold text-yellow-400'> ⭐ 4.5</p>
-                            
-                            <p className="hidden @min-[540px]:block text-gray-300">
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus qui aspernatur nihil sed ut, magni alias, amet repudiandae iste illo iusto odit expedita.
-                            </p>
-                            <p className='text-sm sm:[17px] font-medium text-green-400 mb2 sm:mb-5'> Downloads</p>
-                            <Link to={'/latest'} className="btn btn-accent sm:text-lg">Explore Latest App</Link>
-                          </div>
-                        </div>
-                      </div>
-
-              
-           </SwiperSlide>
-        
-    
+            ))
+           }   
       </Swiper>
     </div>
   );
