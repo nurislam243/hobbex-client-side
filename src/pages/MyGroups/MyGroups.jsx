@@ -8,6 +8,7 @@ import EmptyMyGroups from '../../components/EmptyMyGroups/EmptyMyGroups';
 import { filterInitialMyGroups } from '../../utils/utils';
 import { AuthContext } from '../../context/AuthContext';
 import { Slide, Zoom } from 'react-awesome-reveal';
+import { format } from 'date-fns';
 
 const MyGroups = () => {
   const { user } = useContext(AuthContext);
@@ -69,7 +70,7 @@ const MyGroups = () => {
             Here you’ll find all the groups you’ve joined, thoughtfully organized in one place to give you easy and quick access whenever you need.
           </p>
 
-          <div className='bg-white black-bg-dark-mode shadow-md min-h-[70vh] lg:p-7'>
+          <div className='bg-white black-bg-dark-mode shadow-md min-h-[60vh] lg:p-7'>
           {
             groups.length === 0 ? <EmptyMyGroups></EmptyMyGroups> : 
                       <div className="overflow-x-auto">
@@ -108,7 +109,11 @@ const MyGroups = () => {
                                     </td>
                                     <td>{group.description.slice(0, 50)} ...</td>
                                     <td>{group.maxMembers}</td>
-                                    <td>{group.startDate}</td>
+                                    <td>
+                                      {group.startDate
+                                        ? format(new Date(group.startDate), 'd MMM yyyy')
+                                        : 'No Date'}
+                                    </td>
                                     <td className='flex flex-col items-center gap-2'>
                                       <Link 
                                         data-tooltip-id={`tooltip-edit-${index}`}

@@ -1,22 +1,25 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../context/AuthContext';
 import { toast } from 'react-toastify';
 import { Fade } from 'react-awesome-reveal';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 // import { toast } from 'react-toastify';
 
 const Register = () => {
     const {createUser} = useContext(AuthContext);
     const navigate = useNavigate();
+    const [passwordEye, setPasswordEye] = useState(true);
+    const [confirmPasswordEye, setConfirmPasswordEye] = useState(true);
 
     const handleRegistration = (e) =>{
         e.preventDefault();
         const form = e.target;
-        // const formData = new FormData (form);
         const name = form.name.value;
         const email = form.email.value;
         const profileImage = form.photoUrl.value;
         const password = form.password.value;
+        const confirmPassword = form.confirmPassword.value;
 
         if (name === "") {
             toast.error('⚠️ Please enter your name!', { position: "top-center" });
@@ -46,8 +49,14 @@ const Register = () => {
             toast.error('⚠️ Password must be at least 6 characters long.', { position: "top-center" });
             return;
         }
-        // const confirmPassword = form.confirmPassword.value;
-
+        if (password !== confirmPassword) {
+            toast.error('❌ Password and Confirm Password do not match.', {
+                position: "top-center",
+            });
+            return;
+        }
+        
+        
         // create user in the firebase
         createUser(email, password, name, profileImage, navigate)
     }
@@ -77,13 +86,27 @@ const Register = () => {
                                 <div className="flex justify-between mb-2">
                                     <label htmlFor="password" className="text-sm">Password</label>
                                 </div>
-                                <input type="password" name="password" id="password" placeholder="Enter password" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full input-bg-dark-mode" />
+                                <div className="relative">
+                                    <input type={passwordEye ? "password" : "text"} name="password" id="password" placeholder="Enter password" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full input-bg-dark-mode" />
+                                    <span onClick={()=>setPasswordEye(!passwordEye)} className="absolute text-2xl mt-3 -ml-10">
+                                        {
+                                            passwordEye ? <FaEye /> : <FaEyeSlash/>
+                                        }
+                                    </span>
+                                </div>
                             </div>
                             <div>
                                 <div className="flex justify-between mb-2">
                                     <label htmlFor="confirmPassword" className="text-sm">Confirm Password</label>
                                 </div>
-                                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Enter confirm password" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full input-bg-dark-mode" />
+                                <div className="relative">
+                                    <input type={confirmPasswordEye ? "password" : "text"} name="confirmPassword" id="confirmPassword" placeholder="Enter confirm password" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full input-bg-dark-mode" />
+                                    <span onClick={()=>setConfirmPasswordEye(!confirmPasswordEye)} className="absolute text-2xl mt-3 -ml-10">
+                                        {
+                                            confirmPasswordEye ? <FaEye /> : <FaEyeSlash/>
+                                        }
+                                    </span>
+                                </div>
                             </div>
                         </div>
                         <div className="space-y-2">

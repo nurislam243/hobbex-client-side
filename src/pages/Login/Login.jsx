@@ -1,16 +1,19 @@
 import { signInWithPopup, GoogleAuthProvider  } from 'firebase/auth';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router';
 import Swal from 'sweetalert2';
 import { auth } from '../../firebase/firebase.config';
 import { AuthContext } from '../../context/AuthContext';
 import { Fade } from 'react-awesome-reveal';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
     const googleProvider = new GoogleAuthProvider();
     const {user, setUser} = useContext(AuthContext);
+    const [passwordEye, setPasswordEye] = useState(true);
     // const navigate = useNavigate();
+
     console.log(user);
 
     const handleLoginGoogle = () =>{
@@ -60,7 +63,14 @@ const Login = () => {
                                     <label htmlFor="password" className="text-sm">Password</label>
                                     <a rel="noopener noreferrer" href="#" className="text-xs hover:underline">Forgot password?</a>
                                 </div>
-                                <input type="password" name="password" id="password" placeholder="Enter Password" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full input-bg-dark-mode" />
+                                <div className="relative">
+                                    <input type={passwordEye ? "password" : "text"} name="password" id="password" placeholder="Enter Password" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full input-bg-dark-mode" />
+                                    <span onClick={()=>setPasswordEye(!passwordEye)} className="absolute text-2xl mt-3 -ml-10">
+                                        {
+                                            passwordEye ? <FaEye /> : <FaEyeSlash/>
+                                        }
+                                    </span>
+                                </div>
                             </div>
                         </div>
                         <button type="button" className="w-full px-8 py-5 font-semibold btn bg-primary/90 hover:bg-primary/40 cursor-pointer rounded-[2px] text-white sm:text-[16px]">Login</button>
