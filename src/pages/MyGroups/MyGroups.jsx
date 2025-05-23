@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import EmptyMyGroups from '../../components/EmptyMyGroups/EmptyMyGroups';
 import { filterInitialMyGroups } from '../../utils/utils';
 import { AuthContext } from '../../context/AuthContext';
+import { Slide, Zoom } from 'react-awesome-reveal';
 
 const MyGroups = () => {
   const { user } = useContext(AuthContext);
@@ -59,9 +60,16 @@ const MyGroups = () => {
     }
 
     return (
-      <div className="">
-        <h1 className='text-3xl md:text-4xl text-primary text-center mt-[25px] mb-[18px]'>My Groups</h1>
-        <div className='bg-white black-bg-dark-mode shadow-md min-h-[70vh] lg:p-7'>
+      <Slide triggerOnce>
+        <div className="pt-10">       
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-4">
+            My Groups
+          </h2>
+          <p className="text-center text-base-content mb-10 max-w-2xl mx-auto">
+            Here you’ll find all the groups you’ve joined, thoughtfully organized in one place to give you easy and quick access whenever you need.
+          </p>
+
+          <div className='bg-white black-bg-dark-mode shadow-md min-h-[70vh] lg:p-7'>
           {
             groups.length === 0 ? <EmptyMyGroups></EmptyMyGroups> : 
                       <div className="overflow-x-auto">
@@ -129,8 +137,9 @@ const MyGroups = () => {
                         </table>
                       </div>
           }
+          </div>       
         </div>
-      </div>
+      </Slide>
     );
 };
 

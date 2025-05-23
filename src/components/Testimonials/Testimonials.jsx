@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Zoom } from 'react-awesome-reveal';
 import { FaQuoteLeft } from 'react-icons/fa';
 import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md';
 
@@ -77,26 +78,28 @@ const Testimonials = () => {
           className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hidden"
         >
           {testimonials.map((testimonial, idx) => (
-            <div
-              key={idx}
-              className="@min-[1536px]:w-[371px] snap-start bg-base-100 border border-base-content/50 rounded-md p-6 shadow hover:shadow-xl transition duration-300 flex-shrink-0"
-            >
-              <FaQuoteLeft className="text-2xl text-accent mb-3" />
-              <div className="@min-[1536px]:min-h-[120px]">
-                <p className="text-gray-700 white-text-dark-mode mb-4">{testimonial.feedback}</p>
-              </div>
-              <div className="flex items-center gap-4">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover border-2 border-primary"
-                />
-                <div>
-                  <h4 className="font-semibold">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-500">{testimonial.role}</p>
+           <Zoom> 
+             <div
+                key={idx}
+                className="@min-[1536px]:w-[371px] snap-start bg-base-100 border border-base-content/50 rounded-md p-6 shadow hover:shadow-xl transition duration-300 flex-shrink-0"
+              >
+                <FaQuoteLeft className="text-2xl text-accent mb-3" />
+                <div className="@min-[1536px]:min-h-[120px]">
+                  <p className="text-gray-700 white-text-dark-mode mb-4">{testimonial.feedback}</p>
+                </div>
+                <div className="flex items-center gap-4">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full object-cover border-2 border-primary"
+                  />
+                  <div>
+                    <h4 className="font-semibold">{testimonial.name}</h4>
+                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+           </Zoom>
           ))}
         </div>
 

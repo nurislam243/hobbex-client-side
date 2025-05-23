@@ -1,4 +1,5 @@
 import React from 'react';
+import { Slide } from 'react-awesome-reveal';
 import { FaUsers, FaLock, FaBolt, FaGlobe, FaLightbulb } from 'react-icons/fa';
 
 const BenefitsSection = () => {
@@ -54,14 +55,16 @@ const BenefitsSection = () => {
 
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((item, index) => (
-            <div
+            <Slide>
+              <div
               key={index}
               className="bg-base-200 p-6 rounded shadow hover:shadow-lg transition min-h-[240px]"
-            >
+              >
               <div className="mb-4">{item.icon}</div>
               <h3 className="text-xl font-semibold text-secondary mb-2">{item.title}</h3>
               <p className="text-base-content">{item.description}</p>
-            </div>
+              </div>
+            </Slide>
           ))}
         </div>
       </div>

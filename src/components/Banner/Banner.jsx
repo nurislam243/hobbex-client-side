@@ -5,6 +5,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Link } from 'react-router';
 import { Typewriter } from 'react-simple-typewriter';
+import { Fade, Slide } from 'react-awesome-reveal';
 
 const sliderCategories = [
   {
@@ -53,12 +54,16 @@ const Banner = () => {
         <div className="">
           <div className="pt-14 pb-8 px-4 md:px-10 lg:px-20">
             <div className="text-center text-base-content/75 .white-text-dark-mode max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <Slide triggerOnce>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4">
                 Explore Your Passion with <span className='text-primary/70'>HobbEx</span>
               </h1>
-              <p className="text-lg md:text-xl text-base-content/60 .white-text-dark-mode">
+              </Slide>
+              <Slide direction='right' triggerOnce>
+                <p className="text-lg md:text-xl text-base-content/60 .white-text-dark-mode">
                 Discover, connect, and grow with hobby groups in your area.
-              </p>
+                </p>
+              </Slide>
               <h2 className='text-2xl text-base-content/80 .white-text-dark-mode font-medium mt-4'>Top Groups Category: {' '}
                 <span className="text-secondary/80 font-bold">
                   <Typewriter

@@ -4,6 +4,7 @@ import NavbarEnd from '../NavbarEnd/NavbarEnd';
 import { AuthContext } from '../../context/AuthContext';
 import { CiDark, CiLight } from 'react-icons/ci';
 import { Tooltip } from 'react-tooltip';
+import { Zoom } from 'react-awesome-reveal';
 
 const Navbar = () => {
     const { theme, setTheme } = useContext(AuthContext);
@@ -25,12 +26,14 @@ const Navbar = () => {
                                 <li><NavLink to={'/myGroups'}>My Groups</NavLink></li>      
                             </ul>
                         </div>
-                        <div className="flex gap-1 items-center">
-                            <div className="w-9 h-9 -mb-1">
-                                <img src='/logoHobbex1.png' className='' alt="" />
+                        <Zoom triggerOnce>
+                            <div className="flex gap-1 items-center">
+                                <div className="w-9 h-9 -mb-1">
+                                    <img src='/logoHobbex1.png' className='' alt="" />
+                                </div>
+                                <Link to={'/'} className="text-3xl hidden @min-[393px]:flex font-bold text-primary">HobbEx</Link>
                             </div>
-                            <Link to={'/'} className="text-3xl hidden @min-[393px]:flex font-bold text-primary">HobbEx</Link>
-                        </div>
+                        </Zoom>
                     </div>
                     <div className="hidden lg:flex ml-10 xl:ml-11 text-base-content/70 font-medium">
                         <ul className="flex gap-[18px] text-[16px]">
