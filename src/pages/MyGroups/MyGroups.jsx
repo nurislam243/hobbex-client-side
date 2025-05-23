@@ -61,7 +61,7 @@ const MyGroups = () => {
     return (
       <div className="">
         <h1 className='text-3xl md:text-4xl text-primary text-center mt-[25px] mb-[18px]'>My Groups</h1>
-        <div className='bg-white shadow-md min-h-[70vh] lg:p-7'>
+        <div className='bg-white black-bg-dark-mode shadow-md min-h-[70vh] lg:p-7'>
           {
             groups.length === 0 ? <EmptyMyGroups></EmptyMyGroups> : 
                       <div className="overflow-x-auto">

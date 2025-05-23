@@ -43,7 +43,7 @@ const BenefitsSection = () => {
 
 
   return (
-    <section className="py-16 bg-base-100">
+    <section className="bg-base-100">
       <div className="mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-4">
           Why Choose Hobbex?

@@ -7,7 +7,20 @@ import Swal from 'sweetalert2';
 const AuthProvider = ({children}) => {
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
-    const [theme, setTheme] = useState(true);
+
+    //Load theme from localStorage
+    const [theme, setTheme] = useState(() => {
+        const storedTheme = localStorage.getItem('theme');
+        return storedTheme === 'dark' ? false : true;
+    });
+
+
+
+    //Save to localStorage when theme changes
+    useEffect(() => {
+        localStorage.setItem('theme', theme ? 'hobbex' : 'dark');
+    }, [theme]);
+
 
     // create user using email and password
     const createUser = (email, password, name, profileImage, navigate) => {

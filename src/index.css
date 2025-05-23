@@ -48,6 +48,69 @@
   
   }
 
+
+  @plugin "daisyui/theme" {
+  name: "dark"; 
+  /* Base colors - dark backgrounds and light content */
+  --color-base-100: oklch(20% 0.02 280); 
+  /* --color-base-100: oklch(20% 0.01 250); */
+  --color-base-200: oklch(15% 0.015 280);
+  --color-base-300: oklch(10% 0.01 280);
+  --color-base-content: oklch(95% 0.01 280); /* light text on dark */
+
+  /* Keep primary, secondary, and accent same as light mode */
+  --color-primary: oklch(80% 0.25 145);
+  --color-primary-content: oklch(20% 0.03 145);
+
+  --color-secondary: oklch(72% 0.28 20);
+  --color-secondary-content: oklch(98% 0.01 20);
+
+  --color-accent: oklch(75% 0.21 190);
+  --color-accent-content: oklch(98% 0.01 190);
+
+  /* Neutral - light text, dark surface */
+  --color-neutral: oklch(25% 0.03 250);
+  --color-neutral-content: oklch(95% 0.01 250);
+
+  /* Info, success, warning, error with high contrast content */
+  --color-info: oklch(70% 0.23 220);
+  --color-info-content: oklch(98% 0.01 220);
+
+  --color-success: oklch(70% 0.24 140);
+  --color-success-content: oklch(98% 0.01 140);
+
+  --color-warning: oklch(82% 0.24 85);
+  --color-warning-content: oklch(20% 0.05 85);
+
+  --color-error: oklch(62% 0.28 30);
+  --color-error-content: oklch(98% 0.01 30);
+}
+
+
+[data-theme="dark"] {
+  .black-text-dark-mode{
+    color: rgba(22, 22, 22, 0.827);
+  }
+  .gray-bg-dark-mode{
+    background-color: #1E2939;
+  }
+  .white-text-dark-mode{
+    color: white;
+  }
+  .black-bg-dark-mode{
+    background-color: #0A0A11;
+  }
+  .gray-text-dark-mode{
+    color: #6d7691;
+  }
+  .input-bg-dark-mode{
+    background-color: oklch(27% 0.02 280);
+  }
+
+}
+
+
+
 .poppins-font{
   font-family: "Poppins", sans-serif;
 }

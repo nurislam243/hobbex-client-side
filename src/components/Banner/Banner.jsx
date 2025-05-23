@@ -49,18 +49,17 @@ const sliderCategories = [
 const Banner = () => {
   return (
     <div className="mx-auto rounded-md shadow-2xl">
-
-      <section className="relative bg-white">
+      <section className="relative bg-white gray-bg-dark-mode my-banner">
         <div className="">
           <div className="pt-14 pb-8 px-4 md:px-10 lg:px-20">
-            <div className="text-center text-base-content/75 max-w-4xl mx-auto">
+            <div className="text-center text-base-content/75 .white-text-dark-mode max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
                 Explore Your Passion with <span className='text-primary/70'>HobbEx</span>
               </h1>
-              <p className="text-lg md:text-xl text-base-content/60">
+              <p className="text-lg md:text-xl text-base-content/60 .white-text-dark-mode">
                 Discover, connect, and grow with hobby groups in your area.
               </p>
-              <h2 className='text-2xl text-base-content/80 font-medium mt-4'>Top Groups Category: {' '}
+              <h2 className='text-2xl text-base-content/80 .white-text-dark-mode font-medium mt-4'>Top Groups Category: {' '}
                 <span className="text-secondary/80 font-bold">
                   <Typewriter
                     words={['Photography','Running','Writing', 'Video Gaming', 'Cooking', 'Gardening', 'Programming', 'Fishing']}

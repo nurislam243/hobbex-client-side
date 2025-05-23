@@ -25,7 +25,7 @@ const AllGroups = () => {
         {sortGroups.map((group) => (
           <div
             key={group._id}
-            className="flex flex-col sm:flex-row bg-white rounded shadow-md hover:shadow-xl transition duration-300 overflow-hidden"
+            className="flex flex-col sm:flex-row bg-white black-bg-dark-mode rounded shadow-md hover:shadow-xl transition duration-300 overflow-hidden"
           >
             {/* Image Left */}
             <div className="sm:w-1/3 h-48 sm:h-auto overflow-hidden">
@@ -42,8 +42,8 @@ const AllGroups = () => {
                 <span className="inline-block bg-accent/20 text-accent px-2 py-1 rounded text-xs font-semibold mb-2">
                   {group.hobbyCategory}
                 </span>
-                <h3 className="text-xl font-bold text-neutral-800 mb-1">{group.groupName}</h3>
-                <p className="text-gray-600 text-sm">
+                <h3 className="text-xl font-bold text-neutral-800 mb-1 gray-text-dark-mode">{group.groupName}</h3>
+                <p className="text-gray-600 white-text-dark-mode text-sm">
                   {group.description.length > 120
                     ? group.description.slice(0, 120) + '...'
                     : group.description}

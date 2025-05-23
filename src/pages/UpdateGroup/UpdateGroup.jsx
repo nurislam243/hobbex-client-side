@@ -39,7 +39,7 @@ const CreateGroup = () => {
   }
 
   return (
-    <div className="px-6 pb-6 pt-8 shadow-2xl rounded bg-white mt-4 mb-16">
+    <div className="px-6 pb-6 pt-8 shadow-2xl rounded bg-white black-bg-dark-mode mt-4 mb-16">
       <h2 className="text-3xl font-bold mb-6 text-center text-primary">Update Group</h2>
 
       <form onSubmit={handleUpdateGroup} className="space-y-7">
@@ -49,7 +49,7 @@ const CreateGroup = () => {
                 <label className="label">
                     <span className="label-text">Group Name</span>
                 </label>
-                <input type="text" name="groupName" placeholder="Enter group name" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full" defaultValue={groupName} />
+                <input type="text" name="groupName" placeholder="Enter group name" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full input-bg-dark-mode" defaultValue={groupName} />
             </div>
 
             {/* Hobby Category */}
@@ -57,7 +57,7 @@ const CreateGroup = () => {
                 <label className="label">
                     <span className="label-text">Hobby Category</span>
                 </label>
-                <select name="hobbyCategory" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[10px] rounded-[2px] w-full text-[17px]" defaultValue={hobbyCategory}>
+                <select name="hobbyCategory" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[10px] rounded-[2px] w-full text-[17px] input-bg-dark-mode" defaultValue={hobbyCategory}>
                   <option disabled selected>Pick a category</option>
                   <option>Drawing & Painting</option>
                   <option>Photography</option>
@@ -79,7 +79,7 @@ const CreateGroup = () => {
             <label className="label">
                 <span className="label-text">Meeting Location</span>
             </label>
-            <input type="text" name="metingLocation" placeholder="Location" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full" defaultValue={metingLocation}/>
+            <input type="text" name="metingLocation" placeholder="Location" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full input-bg-dark-mode" defaultValue={metingLocation}/>
             </div>
 
             {/* Max Members */}
@@ -87,7 +87,7 @@ const CreateGroup = () => {
             <label className="label">
                 <span className="label-text">Max Members</span>
             </label>
-            <input type="number" name="maxMembers" placeholder="e.g. 10" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full" defaultValue={maxMembers}/>
+            <input type="number" name="maxMembers" placeholder="e.g. 10" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full input-bg-dark-mode" defaultValue={maxMembers}/>
             </div>
 
             {/* Start Date */}
@@ -95,7 +95,7 @@ const CreateGroup = () => {
             <label className="label">
                 <span className="label-text">Start Date</span>
             </label>
-            <input type="date" name="startDate" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full" defaultValue={startDate} />
+            <input type="date" name="startDate" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full input-bg-dark-mode" defaultValue={startDate} />
             </div>
 
             {/* Image URL */}
@@ -103,7 +103,7 @@ const CreateGroup = () => {
             <label className="label">
                 <span className="label-text">Image URL</span>
             </label>
-            <input type="url" name="imageURL" placeholder="https://example.com/image.jpg" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full" defaultValue={imageURL}/>
+            <input type="url" name="imageURL" placeholder="https://example.com/image.jpg" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full input-bg-dark-mode" defaultValue={imageURL}/>
             </div>
 
             {/* User Name (readonly) */}
@@ -111,7 +111,7 @@ const CreateGroup = () => {
             <label className="label">
                 <span className="label-text">Your Name</span>
             </label>
-            <input type="text" name="userName" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full" defaultValue={user.displayName} readOnly />
+            <input type="text" name="userName" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full input-bg-dark-mode" defaultValue={user.displayName} readOnly />
             </div>
 
             {/* User Email (readonly) */}
@@ -119,7 +119,7 @@ const CreateGroup = () => {
             <label className="label">
                 <span className="label-text">Your Email</span>
             </label>
-            <input type="email" name="userEmail" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full" defaultValue={user.email} readOnly />
+            <input type="email" name="userEmail" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full input-bg-dark-mode" defaultValue={user.email} readOnly />
             </div>
         </div>
 
@@ -128,12 +128,12 @@ const CreateGroup = () => {
           <label className="label">
             <span className="label-text">Description</span>
           </label>
-          <textarea name="description" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full" rows="3" placeholder="Write a short description..." defaultValue={description}></textarea>
+          <textarea name="description" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full input-bg-dark-mode" rows="3" placeholder="Write a short description..." defaultValue={description}></textarea>
         </div>
 
         {/* Submit Button */}
         <div className="md:col-span-2 text-center mt-4 w-full">
-          <button type="submit" className="btn btn-primary text-lg text-white w-full">Update Group</button>
+          <button type="submit" className="btn btn-primary text-lg text-white w-full rounded-[2px]">Update Group</button>
         </div>
       </form>
     </div>

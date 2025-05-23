@@ -9,7 +9,7 @@ const Home = () => {
     const groups = useLoaderData();
     console.log(groups);
     return (
-        <div>
+        <div className='space-y-[100px]'>
             <Banner></Banner>
             <FeaturedSection groups={groups}></FeaturedSection>
             <BenefitsSection></BenefitsSection>

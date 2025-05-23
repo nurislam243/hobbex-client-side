@@ -59,7 +59,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="my-16">
+    <section className="">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-primary">
         What Our Users Say
       </h2>
@@ -68,7 +68,7 @@ const Testimonials = () => {
         <MdArrowBackIosNew
           onClick={slideLeft}
           size={38}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 hidden lg:block opacity-0 group-hover:opacity-60 hover:opacity-100 bg-white rounded-full p-2 shadow-md cursor-pointer transition"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 hidden black-text-dark-mode lg:block opacity-0 group-hover:opacity-60 hover:opacity-100 bg-white rounded-full p-2 shadow-md cursor-pointer transition"
         />
 
         {/* Scrollable Testimonials */}
@@ -83,7 +83,7 @@ const Testimonials = () => {
             >
               <FaQuoteLeft className="text-2xl text-accent mb-3" />
               <div className="@min-[1536px]:min-h-[120px]">
-                <p className="text-gray-700 mb-4">{testimonial.feedback}</p>
+                <p className="text-gray-700 white-text-dark-mode mb-4">{testimonial.feedback}</p>
               </div>
               <div className="flex items-center gap-4">
                 <img
@@ -104,7 +104,7 @@ const Testimonials = () => {
         <MdArrowForwardIos
           onClick={slideRight}
           size={38}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 hidden lg:block opacity-0 group-hover:opacity-60 hover:opacity-100 bg-white rounded-full p-2 shadow-md cursor-pointer transition"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 hidden lg:block opacity-0 group-hover:opacity-60 hover:opacity-100 bg-white black-text-dark-mode rounded-full p-2 shadow-md cursor-pointer transition"
         />
       </div>
     </section>
