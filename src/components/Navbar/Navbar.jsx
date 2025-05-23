@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router';
 import NavbarEnd from '../NavbarEnd/NavbarEnd';
 import { AuthContext } from '../../context/AuthContext';
 import { CiDark, CiLight } from 'react-icons/ci';
+import { Tooltip } from 'react-tooltip';
 
 const Navbar = () => {
     const { theme, setTheme } = useContext(AuthContext);
@@ -42,11 +43,19 @@ const Navbar = () => {
                 </div>
 
                 <div className="navbar-end gap-2">
-                    <button onClick={() => setTheme(!theme)} className='cursor-pointer'>
+                    <button 
+                    onClick={() => setTheme(!theme)} 
+                    className='cursor-pointer'
+                    data-tooltip-id="theme-tooltip"
+                    data-tooltip-content={theme ? "Enable Dark Mode" : "Enable Light Mode"}
+                    data-tooltip-place="top"
+
+                    >
                         {
-                            theme ? <CiLight size={40} /> : <CiDark size={40} />
+                            theme ? <CiDark size={40} /> : <CiLight size={40} />
                         }
                     </button>
+                    <Tooltip id="theme-tooltip" />
                     <NavbarEnd></NavbarEnd>
                 </div>
             </nav>
