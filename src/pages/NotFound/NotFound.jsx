@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router';
-import errorRed from "../../assets/error-red.png"
 import error404 from "../../animations/error404.json";
 import error from "../../animations/error.json";
 import Lottie from 'lottie-react';

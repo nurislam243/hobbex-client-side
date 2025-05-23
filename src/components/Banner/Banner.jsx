@@ -106,7 +106,7 @@ const Banner = () => {
                     <p className="text-gray-300">
                       {slider.description}
                     </p>
-                    <Link to={'/groups'} className="btn btn-secondary btn-outline text-white mt-9 sm:text-lg">View All Groups</Link>
+                    <Link to={'/groups'} className="btn rounded-[2px] btn-secondary btn-outline text-white mt-9 sm:text-lg">View All Groups</Link>
                   </div>
                 </div>
               </div>             

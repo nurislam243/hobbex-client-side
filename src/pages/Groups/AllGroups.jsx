@@ -17,9 +17,12 @@ const AllGroups = () => {
 
   return (
     <section className="py-10">
-      <h2 className="text-3xl font-bold text-center text-primary mb-10">
+      <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-4">
         Explore All Hobby Groups
       </h2>
+      <p className="text-center text-base-content mb-10 max-w-2xl mx-auto">
+        Discover and connect with vibrant communities that share your passions, fuel your creativity, and help you grow through meaningful hobbies and shared interests.
+      </p>
 
       <div className="flex flex-col @min-[520px]:grid @min-[520px]:grid-cols-2 @min-[1280px]:grid-cols-3 gap-6">
         {sortGroups.map((group) => (
@@ -51,7 +54,7 @@ const AllGroups = () => {
               </div>
               <div className="mt-4">
                 <Link to={`/group/${group._id}`}>
-                  <button className="btn btn-primary text-white btn-sm">See More</button>
+                  <button className="btn btn-primary rounded-[2px] text-white btn-sm">See More</button>
                 </Link>
               </div>
             </div>
@@ -59,7 +62,7 @@ const AllGroups = () => {
         ))}
       </div>
       <div className="flex justify-center mt-6">
-        <button className='btn btn-secondary md:text-lg' onClick={() => setSortState(!sortState)}>
+        <button className='btn btn-secondary rounded-[2px] md:text-lg' onClick={() => setSortState(!sortState)}>
           {
             sortState ? <span>View All</span> : <span>View Less</span>
           }

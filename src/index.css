@@ -103,6 +103,9 @@
   .gray-text-dark-mode{
     color: #6d7691;
   }
+  .gray1-text-dark-mode{
+    color: #b8bbca;
+  }
   .input-bg-dark-mode{
     background-color: oklch(27% 0.02 280);
   }

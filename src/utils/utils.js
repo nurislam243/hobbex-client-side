@@ -11,10 +11,18 @@ export const filterFeaturedGroups = (groups) =>{
         const startDateStr = group.startDate;
         const startDate = new Date(startDateStr);
         const today = new Date();
-        
         return startDate > today
     })
 
     const sixFeaturedGroup = onGoingGroup.slice(0, 6)
     return sixFeaturedGroup;
+}
+
+
+export const filterIsDateEnd = (date) =>{
+    const today = new Date();
+    const startDate = new Date(date);
+    if(today < startDate){
+        return true;
+    }
 }

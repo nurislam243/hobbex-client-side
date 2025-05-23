@@ -20,7 +20,7 @@ const FeaturedGroupCard = ({ group }) => {
         </p>
         <div className="card-actions justify-end mt-4">
           <Link to={`/group/${_id}`}>
-            <button className="btn btn-primary text-white btn-sm">See More</button>
+            <button className="btn btn-primary rounded-[2px] text-white btn-sm">See More</button>
           </Link>
         </div>
       </div>

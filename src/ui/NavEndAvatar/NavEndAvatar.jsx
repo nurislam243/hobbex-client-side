@@ -13,7 +13,7 @@ const NavEndAvatar = () => {
                  }
             </div>
            
-            <button className='btn btn-outline btn-primary hover:text-white' onClick={handleLogout}>Logout</button>           
+            <button className='btn rounded-[2px] btn-outline btn-primary hover:text-white' onClick={handleLogout}>Logout</button>           
         </div>
     );
 };
