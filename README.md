@@ -1,8 +1,9 @@
-# HobbyHub - A Local Hobby Group Organizer
+# HobbEx - A Local Hobby Group Organizer
 
 🔗 **Live Site:** [https://hobbex-c8104.web.app/](https://hobbex-c8104.web.app/)
+- 🛠️ Server GitHub Repo: [https://github.com/Programming-Hero-Web-Course4/b11a10-server-side-nurislam243](https://github.com/Programming-Hero-Web-Course4/b11a10-server-side-nurislam243)
 
-HobbyHub is a platform that allows users to discover, create, and manage local hobby-based groups. Whether you're into painting, reading, or hiking — HobbyHub helps you connect with others who share the same passion.
+HobbEx is a platform that allows users to discover, create, and manage local hobby-based groups. Whether you're into painting, reading, or hiking — HobbEx helps you connect with others who share the same passion.
 
 ## 🚀 Features
 
