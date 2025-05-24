@@ -114,7 +114,7 @@ const Register = () => {
                                 <button type="submit" className="w-full px-8 py-5 font-semibold btn bg-primary/90 hover:bg-primary/40 cursor-pointer rounded-[2px] text-white sm:text-[16px]">Register</button>
                             </div>
                             <p className="px-6 text-sm text-center dark:text-gray-600">Already have an account ? 
-                                <Link rel="noopener noreferrer" to={'/login'} href="#" className="hover:underline dark:text-violet-600 text-blue-700"> Login</Link>
+                                <Link rel="noopener noreferrer" to={'/login'} href="#" className="hover:underline dark:text-violet-600 text-blue-700 blueLight-text-dark-mode"> Login</Link>
                             </p>
                         </div>
                     </form>

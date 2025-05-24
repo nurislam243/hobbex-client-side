@@ -109,6 +109,9 @@
   .input-bg-dark-mode{
     background-color: oklch(27% 0.02 280);
   }
+  .blueLight-text-dark-mode{
+    color: #a0cfff;
+  }
 
 }
 

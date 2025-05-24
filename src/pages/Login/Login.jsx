@@ -110,7 +110,7 @@ const Login = () => {
                 <div className="w-full max-w-md p-4 shadow-2xl mt-[27px] sm:mt-[50px] lg:mt-[80px] 2xl:mt-[100px] mx-auto black-bg-dark-mode sm:p-8">
                     <h2 className="mb-3 text-3xl font-semibold text-center text-accent">Login to your account</h2>
                     <p className="text-sm text-center text-base-content">Don't have account?
-                        <Link  to={'/registration'} className="focus:underline hover:underline text-blue-700"> Registration here</Link>
+                        <Link  to={'/registration'} className="focus:underline hover:underline text-blue-700 blueLight-text-dark-mode"> Registration here</Link>
                     </p>
                     <form onSubmit={handleLoginWithPassword} className="space-y-8 mt-6">
                         <div className="space-y-4">
@@ -145,7 +145,7 @@ const Login = () => {
 
                     {/* login with google */}
                     <div className="my-6 space-y-4">
-                        <button aria-label="Login with Google" onClick={handleLoginGoogle} type="button" className="flex items-center justify-center mt-1 outline outline-base-content/50 focus:outline-base-content px-3.5 py-[9px] rounded-[2px] w-full text-lg gap-2">
+                        <button aria-label="Login with Google" onClick={handleLoginGoogle} type="button" className="flex items-center justify-center mt-1 outline cursor-pointer outline-base-content/50 focus:outline-base-content px-3.5 py-[9px] rounded-[2px] w-full text-lg gap-2">
                             <FcGoogle size={25}/>
                             <p>Login with Google</p>
                         </button>

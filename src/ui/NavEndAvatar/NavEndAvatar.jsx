@@ -1,9 +1,14 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
+import { useNavigate } from 'react-router';
 
 const NavEndAvatar = () => {
     const {user, handleLogout} = useContext(AuthContext);
-    console.log(user);
+    const navigate = useNavigate();
+
+    const userLogout = () =>{
+        handleLogout(navigate)
+    }
 
     return (
         <div className='flex gap-3 items-center'>
@@ -13,7 +18,7 @@ const NavEndAvatar = () => {
                  }
             </div>
            
-            <button className='btn rounded-[2px] btn-outline btn-primary hover:text-white' onClick={handleLogout}>Logout</button>           
+            <button className='btn rounded-[2px] btn-outline btn-primary hover:text-white' onClick={userLogout}>Logout</button>           
         </div>
     );
 };

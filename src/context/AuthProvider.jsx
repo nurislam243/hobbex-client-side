@@ -62,7 +62,7 @@ const AuthProvider = ({children}) => {
     }
 
     //handle logout
-    const handleLogout = () => {
+    const handleLogout = (navigate) => {
       Swal.fire({
         title: 'Are you sure?',
         text: "Do you really want to log out?",
@@ -76,6 +76,7 @@ const AuthProvider = ({children}) => {
           signOut(auth)
             .then(() => {
               setUser(null);
+              navigate("/")
               Swal.fire({
                 icon: 'success',
                 title: 'Logged Out!',
