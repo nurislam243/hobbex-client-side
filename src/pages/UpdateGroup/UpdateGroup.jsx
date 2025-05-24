@@ -3,6 +3,7 @@ import { AuthContext } from "../../context/AuthContext";
 import Swal from "sweetalert2";
 import { useLoaderData } from "react-router";
 import { Slide } from "react-awesome-reveal";
+import { toast } from "react-toastify";
 
 const CreateGroup = () => {
   const {user} = useContext(AuthContext);
@@ -14,6 +15,43 @@ const CreateGroup = () => {
     const form = e.target;
     const formData = new FormData(form);
     const updatedGroup = Object.fromEntries(formData.entries());
+
+
+    // update group form validation
+    if (!updatedGroup.groupName || updatedGroup.groupName.length < 3) {
+      toast.error("Group name must be at least 3 characters long.");
+      return;
+    }
+
+    if (!updatedGroup.hobbyCategory || updatedGroup.hobbyCategory === "Pick a category") {
+      toast.error("Please select a hobby category.");
+      return;
+    }
+
+    if (!updatedGroup.metingLocation) {
+      toast.error("Meeting location is required.");
+      return;
+    }
+
+    if (!updatedGroup.maxMembers || parseInt(updatedGroup.maxMembers) < 1) {
+      toast.error("Max members must be at least 2.");
+      return;
+    }
+
+    if (!updatedGroup.startDate) {
+      toast.error("Start date is required.");
+      return;
+    }
+
+    if (!updatedGroup.imageURL || !/^https?:\/\/.+/.test(updatedGroup.imageURL)) {
+      toast.error("Please enter a valid image URL (must start with http/https).");
+      return;
+    }
+
+    if (!updatedGroup.description || updatedGroup.description.length < 10) {
+      toast.error("Description must be at least 10 characters long.");
+      return;
+    }
 
 
     // send updated group data to the db

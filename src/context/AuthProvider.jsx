@@ -75,8 +75,7 @@ const AuthProvider = ({children}) => {
         if (result.isConfirmed) {
           signOut(auth)
             .then(() => {
-              setUser(null);
-              navigate("/")
+              navigate('/');
               Swal.fire({
                 icon: 'success',
                 title: 'Logged Out!',
@@ -84,6 +83,7 @@ const AuthProvider = ({children}) => {
                 timer: 2000,
                 showConfirmButton: false
               });
+              setUser(null);
             })
             .catch((error) => {
               // console.log(error);

@@ -6,6 +6,7 @@ const NavEndAvatar = () => {
     const {user, handleLogout} = useContext(AuthContext);
     const navigate = useNavigate();
 
+
     const userLogout = () =>{
         handleLogout(navigate)
     }

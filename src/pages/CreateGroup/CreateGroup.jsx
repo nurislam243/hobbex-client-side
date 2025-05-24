@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import Swal from "sweetalert2";
 import { Slide } from "react-awesome-reveal";
+import { toast } from "react-toastify";
 
 const CreateGroup = () => {
   const {user} = useContext(AuthContext);
@@ -12,7 +13,49 @@ const CreateGroup = () => {
     const form = e.target;
     const formData = new FormData(form);
     const newGroup = Object.fromEntries(formData.entries());
-    console.log(newGroup);
+
+
+    // create group form validation
+    if (!newGroup.groupName || newGroup.groupName.length < 3) {
+      toast.error("Group name must be at least 3 characters.");
+      return;
+    }
+
+    if (!newGroup.hobbyCategory || newGroup.hobbyCategory === "Pick a category") {
+      toast.error("Please select a hobby category.");
+      return;
+    }
+
+    if (!newGroup.metingLocation) {
+      toast.error("Meeting location is required.");
+      return;
+    }
+
+    const maxMembers = parseInt(newGroup.maxMembers);
+    if (!newGroup.maxMembers || isNaN(maxMembers) || maxMembers < 2) {
+      toast.error("There must be at least 2 members in a group.");
+      return;
+    }
+
+    if (!newGroup.startDate) {
+      toast.error("Start date is required.");
+      return;
+    }
+
+    // if (new Date(newGroup.startDate) < new Date()) {
+    //   toast.error("Start date cannot be in the past.");
+    //   return;
+    // }
+
+    if (!newGroup.imageURL || !newGroup.imageURL.startsWith("http")) {
+      toast.error("Please enter a valid image URL.");
+      return;
+    }
+
+    if (!newGroup.description || newGroup.description.length < 10) {
+      toast.error("Description must be at least 10 characters.");
+      return;
+    }
 
 
     // send create group data to the db

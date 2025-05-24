@@ -9,8 +9,8 @@ import { Zoom } from 'react-awesome-reveal';
 const Navbar = () => {
     const { theme, setTheme } = useContext(AuthContext);
     return (
-        <div className="bg-base-300 py-[8px] lg:py-[12px] sticky top-0 z-20">
-            <nav className="navbar md:container mx-auto">
+        <div className="bg-base-300 py-[8px] lg:py-[13px] sticky top-0 z-20">
+            <nav className="navbar md:container mx-auto px-[6px] @min-[300px]:px-2 @min-[315px]:px-3 @min-[340px]:px-[14px] @min-[380px]:px-4 @min-[768px]:px-[2px] @min-[1024px]:px-4 @min-[1044px]:px-0 @min-[1280px]:px-4 @min-[1310px]:px-0 @min-[1536px]:px-4 @min-[1562px]:px-0">
                 <div className="navbar-start w-full">
                     <div className="flex items-center gap-2.5">
                         <div className="dropdown">

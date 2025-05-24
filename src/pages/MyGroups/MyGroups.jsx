@@ -15,7 +15,7 @@ const MyGroups = () => {
     const allGroups = useLoaderData();
     const initialGroups = filterInitialMyGroups(allGroups, user);
     const [groups, setGroups] = useState(initialGroups);
-    console.log(groups);
+    console.log(user);
 
 
     const handleDeleteGroup = (id) => {
@@ -80,8 +80,9 @@ const MyGroups = () => {
                               <tr className='text-center space-x-0'>
                                 <th>Group</th>
                                 <th>Category</th>
-                                <th className='hidden md:block max-w-[532px]'>Description</th>
                                 <th>Max Members</th>
+                                <th>Meeting Location</th>
+                                <th className='max-w-[532px]'>Description</th>
                                 <th>Start Date</th>
                                 <th>Actions</th>
                               </tr>
@@ -93,7 +94,7 @@ const MyGroups = () => {
                                     <td>
                                       <div className="flex items-center gap-1.5 md:gap-2 lg:gap-3">
                                         <div className="avatar">
-                                          <div className="h-12 w-12 md:h-[105px] md:w-[105px]">
+                                          <div className="h-12 w-12 @min-[340px]:h-[60px] @min-[340px]:w-[60px] @min-[500px]:h-[80px] @min-[500px]:w-[80px] @min-[700px]:h-[100px] @min-[700px]:w-[100px] @min-[900px]:h-[115px] @min-[900px]:w-[115px] @min-[1100px]:h-[125px] @min-[1100px]:w-[125px] @min-[1280px]:h-[135px] @min-[1280px]:w-[135px]">
                                             <img
                                               src={group.imageURL}
                                               alt="" />
@@ -107,22 +108,44 @@ const MyGroups = () => {
                                     <td>
                                       {group.hobbyCategory}
                                     </td>
-                                    <td className='hidden md:flex'>
-                                      <p className='max-w-[532px]'>
-                                        <span className='hidden 2xl:block'>{group.description.slice(0, 328)} {group.description.length > 320 ? <span className='font-extrabold'>...</span> : ''}</span>
-                                        <span className='hidden xl:block 2xl:hidden'>{group.description.slice(0, 189)} {group.description.length > 120 ? <span className='font-extrabold'>...</span> : ''}</span>
-                                        <span className='hidden lg:block xl:hidden'>{group.description.slice(0, 109)} {group.description.length > 109 ? <span className='font-extrabold'>...</span> : ''}</span>
-                                        <span className='hidden md:block lg:hidden'>{group.description.slice(0, 47)} {group.description.length > 47 ? <span className='font-extrabold'>...</span> : ''}</span>
+                                    <td>{group.maxMembers}</td>
+                                    <td>{group.metingLocation}</td>
+                                    <td className=''>
+                                      <p className='max-w-[532px] min-w-[389px]'>
+                                        <span className='hidden 2xl:block'>
+                                          {group.description.slice(0, 358)} {group.description.length > 358 ? 
+                                          <span className='font-extrabold'>...</span> : ''}
+                                        </span>
+                                        <span className='hidden xl:block 2xl:hidden'>
+                                          {group.description.slice(0, 290)} {group.description.length > 290 ? 
+                                          <span className='font-extrabold'>...</span> : ''}
+                                        </span>
+                                        <span className='hidden lg:block xl:hidden'>
+                                          {group.description.slice(0, 209)} {group.description.length > 209 ? 
+                                          <span className='font-extrabold'>...</span> : ''}
+                                        </span>
+                                        <span className='hidden md:block lg:hidden'>
+                                          {group.description.slice(0, 177)} {group.description.length > 177 ? 
+                                          <span className='font-extrabold'>...</span> : ''}
+                                        </span>
+                                        <span className='hidden sm:block md:hidden'>
+                                          {group.description.slice(0, 150)} {group.description.length > 150 ? 
+                                          <span className='font-extrabold'>...</span> : ''}
+                                        </span>
+                                        <span className='sm:hidden'>
+                                          {group.description.slice(0, 120)} {group.description.length > 120 ? 
+                                          <span className='font-extrabold'>...</span> : ''}
+                                        </span>
                                       </p>
                                     </td>
-                                    <td>{group.maxMembers}</td>
                                     <td>
                                       {group.startDate
                                         ? format(new Date(group.startDate), 'd MMM yyyy')
                                         : 'No Date'}
                                     </td>
-                                    <td className='flex flex-col items-center gap-2'>
+                                    <td className='flex flex-col items-center gap-2 sm:gap-4 md:gap-6'>
                                       <Link 
+                                        className='text-primary/80 mt-2 sm:mt-4 md:mt-5 lg:mt-6 2xl:mt-7'
                                         data-tooltip-id={`tooltip-edit-${index}`}
                                         data-tooltip-content="Update this group"
                                         data-tooltip-place="top"
@@ -136,7 +159,7 @@ const MyGroups = () => {
                                         data-tooltip-id={`tooltip-delete-${index}`}
                                         data-tooltip-content="Delete this group"
                                         data-tooltip-place="top"
-                                        className='cursor-pointer'
+                                        className='cursor-pointer text-error/80'
                                       >
                                         <MdDeleteForever size={25} />
                                       </button>
