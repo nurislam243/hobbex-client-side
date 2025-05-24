@@ -20,19 +20,19 @@ import Spinner from "../ui/Spinner/Spinner";
       children: [
         {
             path: "/",
-            loader: () => fetch('http://localhost:3000/groups'),
+            loader: () => fetch('https://hobbex-server.vercel.app/groups'),
             hydrateFallbackElement: <Spinner></Spinner>,
             Component: Home
         },
         {
           path: '/groups',
-          loader: () => fetch('http://localhost:3000/groups'),
+          loader: () => fetch('https://hobbex-server.vercel.app/groups'),
           hydrateFallbackElement: <Spinner></Spinner>,
           Component: AllGroups
         },
         {
           path: '/group/:id',
-          loader: ({ params }) => fetch(`http://localhost:3000/groups/${params.id}`) ,
+          loader: ({ params }) => fetch(`https://hobbex-server.vercel.app/groups/${params.id}`) ,
           hydrateFallbackElement: <Spinner></Spinner>,
           element: <PrivateRoute><GroupDetails></GroupDetails></PrivateRoute>
         },
@@ -42,13 +42,13 @@ import Spinner from "../ui/Spinner/Spinner";
         },
         {
           path: '/myGroups',
-          loader: () => fetch('http://localhost:3000/groups'),
+          loader: () => fetch('https://hobbex-server.vercel.app/groups'),
           hydrateFallbackElement: <Spinner></Spinner>,
           element: <PrivateRoute><MyGroups></MyGroups></PrivateRoute>
         },
         {
           path: '/updateGroup/:id',
-          loader: ({ params }) => fetch(`http://localhost:3000/groups/${params.id}`) ,
+          loader: ({ params }) => fetch(`https://hobbex-server.vercel.app/groups/${params.id}`) ,
           hydrateFallbackElement: <Spinner></Spinner>,
           element: <PrivateRoute><UpdateGroup></UpdateGroup></PrivateRoute>
         },

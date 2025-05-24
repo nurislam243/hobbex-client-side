@@ -14,19 +14,20 @@ const Footer = () => {
                             <Link to={'/'} className="text-3xl font-bold text-primary">HobbEx</Link>
                         </div>
                     </a>
+                    <p className='hidden xl:flex mt-3 text-gray-300'>A Local Platform for Hobby Enthusiasts</p>
                 </div>
                 <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
                     <div className="space-y-3">
-                        <h3 className="tracking-wide uppercase dark:text-gray-900">Product</h3>
+                        <h3 className="tracking-wide uppercase dark:text-gray-900">Explore</h3>
                         <ul className="space-y-1">
                             <li>
                                 <a rel="noopener noreferrer" href="#">Features</a>
                             </li>
                             <li>
-                                <a rel="noopener noreferrer" href="#">Integrations</a>
+                                <a rel="noopener noreferrer" href="#">Group Types</a>
                             </li>
                             <li>
-                                <a rel="noopener noreferrer" href="#">Pricing</a>
+                                <a rel="noopener noreferrer" href="#">Find Groups</a>
                             </li>
                             <li>
                                 <a rel="noopener noreferrer" href="#">FAQ</a>
@@ -34,27 +35,27 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className="space-y-3">
-                        <h3 className="tracking-wide uppercase dark:text-gray-900">Company</h3>
+                        <h3 className="tracking-wide uppercase dark:text-gray-900">About</h3>
                         <ul className="space-y-1">
                             <li>
-                                <a rel="noopener noreferrer" href="#">Privacy</a>
+                                <a rel="noopener noreferrer" href="#">Our Mission</a>
                             </li>
                             <li>
-                                <a rel="noopener noreferrer" href="#">Terms of Service</a>
+                                <a rel="noopener noreferrer" href="#">Contact Us</a>
                             </li>
                         </ul>
                     </div>
                     <div className="space-y-3">
-                        <h3 className="uppercase dark:text-gray-900">Developers</h3>
+                        <h3 className="uppercase dark:text-gray-900">For Organizers</h3>
                         <ul className="space-y-1">
                             <li>
-                                <a rel="noopener noreferrer" href="#">Public API</a>
+                                <a rel="noopener noreferrer" href="#">Organizers Guidelines</a>
                             </li>
                             <li>
-                                <a rel="noopener noreferrer" href="#">Documentation</a>
+                                <a rel="noopener noreferrer" href="#">Tools</a>
                             </li>
                             <li>
-                                <a rel="noopener noreferrer" href="#">Guides</a>
+                                <a rel="noopener noreferrer" href="#"> API</a>
                             </li>
                         </ul>
                     </div>
@@ -80,7 +81,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="py-6 text-sm text-center dark:text-gray-600">© 1968 Company Co. All rights reserved.</div>
+            <div className="py-6 text-sm text-center dark:text-gray-600">© 2025 HobbEx. All rights reserved.</div>
         </footer>
     );
 };

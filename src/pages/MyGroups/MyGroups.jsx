@@ -31,7 +31,7 @@ const MyGroups = () => {
       }).then((result) => {
         if (result.isConfirmed) {
 
-          fetch(`http://localhost:3000/groups/${id}`, {
+          fetch(`https://hobbex-server.vercel.app/groups/${id}`, {
             method: 'DELETE'
           })
           .then(res => res.json())
@@ -80,7 +80,7 @@ const MyGroups = () => {
                               <tr className='text-center space-x-0'>
                                 <th>Group</th>
                                 <th>Category</th>
-                                <th>Description</th>
+                                <th className='hidden md:block max-w-[532px]'>Description</th>
                                 <th>Max Members</th>
                                 <th>Start Date</th>
                                 <th>Actions</th>
@@ -93,7 +93,7 @@ const MyGroups = () => {
                                     <td>
                                       <div className="flex items-center gap-1.5 md:gap-2 lg:gap-3">
                                         <div className="avatar">
-                                          <div className="h-12 w-12">
+                                          <div className="h-12 w-12 md:h-[105px] md:w-[105px]">
                                             <img
                                               src={group.imageURL}
                                               alt="" />
@@ -107,7 +107,14 @@ const MyGroups = () => {
                                     <td>
                                       {group.hobbyCategory}
                                     </td>
-                                    <td>{group.description.slice(0, 50)} ...</td>
+                                    <td className='hidden md:flex'>
+                                      <p className='max-w-[532px]'>
+                                        <span className='hidden 2xl:block'>{group.description.slice(0, 328)} {group.description.length > 320 ? <span className='font-extrabold'>...</span> : ''}</span>
+                                        <span className='hidden xl:block 2xl:hidden'>{group.description.slice(0, 189)} {group.description.length > 120 ? <span className='font-extrabold'>...</span> : ''}</span>
+                                        <span className='hidden lg:block xl:hidden'>{group.description.slice(0, 109)} {group.description.length > 109 ? <span className='font-extrabold'>...</span> : ''}</span>
+                                        <span className='hidden md:block lg:hidden'>{group.description.slice(0, 47)} {group.description.length > 47 ? <span className='font-extrabold'>...</span> : ''}</span>
+                                      </p>
+                                    </td>
                                     <td>{group.maxMembers}</td>
                                     <td>
                                       {group.startDate

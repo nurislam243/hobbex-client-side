@@ -2,8 +2,8 @@ import React from 'react';
 
 const Spinner = () => {
     return (
-        <div className='absolute top-[350px] w-full flex justify-center'>
-            <h3 className="loader w-2xl h-96"></h3>
+        <div className='w-[50px] lg:w-[200px] mx-auto mt-[250px]'>
+            <span class="loader"></span>
         </div>
     );
 };

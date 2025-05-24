@@ -7,7 +7,7 @@ import { useLoaderData } from 'react-router';
 
 const Home = () => {
     const groups = useLoaderData();
-    console.log(groups);
+    // console.log(groups);
     return (
         <div className='space-y-[100px]'>
             <Banner></Banner>

@@ -123,12 +123,12 @@
 }
 
 .loader {
-  width: 48px;
-  height: 48px;
+  width: 91px;
+  height: 91px;
   border-radius: 50%;
   display: inline-block;
-  border-top: 4px solid #FFF;
-  border-right: 4px solid transparent;
+  border-top: 5px solid oklch(72% 0.28 20);
+  border-right: 5px solid transparent;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
@@ -138,11 +138,11 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 48px;
-  height: 48px;
+  width: 91px;
+  height: 91px;
   border-radius: 50%;
-  border-bottom: 4px solid #FF3D00;
-  border-left: 4px solid transparent;
+  border-bottom: 5px solid oklch(80% 0.25 145);
+  border-left: 5px solid transparent;
 }
 @keyframes rotation {
   0% {

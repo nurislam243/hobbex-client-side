@@ -17,7 +17,7 @@ const CreateGroup = () => {
 
 
     // send updated group data to the db
-    fetch(`http://localhost:3000/groups/${_id}`, {
+    fetch(`https://hobbex-server.vercel.app/groups/${_id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json'
@@ -135,7 +135,7 @@ const CreateGroup = () => {
 
           {/* Submit Button */}
           <div className="md:col-span-2 text-center mt-4 w-full">
-            <button type="submit" className="btn btn-primary text-lg text-white w-full rounded-[2px]">Update Group</button>
+            <button type="submit" className="btn btn-primary text-lg text-white w-full py-5 rounded-[2px]">Update Group</button>
           </div>
         </form>
       </div>

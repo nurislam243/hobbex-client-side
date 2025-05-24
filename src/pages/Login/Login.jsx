@@ -1,7 +1,7 @@
-import { signInWithPopup, GoogleAuthProvider  } from 'firebase/auth';
+import { signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword  } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
 import { auth } from '../../firebase/firebase.config';
 import { AuthContext } from '../../context/AuthContext';
@@ -12,10 +12,69 @@ const Login = () => {
     const googleProvider = new GoogleAuthProvider();
     const {user, setUser} = useContext(AuthContext);
     const [passwordEye, setPasswordEye] = useState(true);
-    // const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from;
+    const navigate = useNavigate();
 
-    console.log(user);
 
+    // login with email and password
+
+    const handleLoginWithPassword =(e)=>{
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        
+        if(email === ""){
+            Swal.fire({
+                icon: 'error',
+                title: 'Email Required!',
+                text: '⚠️ Please enter your email address!',
+            });
+            return;
+        }
+        if(password === ""){
+            Swal.fire({
+                icon: 'error',
+                title: 'Password Required!',
+                text: '⚠️ Please enter your password!',
+            });
+            return;
+        }
+
+        signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {                
+            const passwordLoginUser = userCredential.user;                
+            setUser(passwordLoginUser);               
+            Swal.fire('Login Successful', 'You have successfully logged in.', 'success');
+            navigate(from?from:"/");
+            
+        })
+        .catch((error) => {
+            // console.log(JSON.stringify(error))
+            switch (error.code) {
+                case 'auth/missing-email':
+                    Swal.fire('Missing Email', 'Please enter your email address before logging in.', 'error');
+                    break;
+                case 'auth/invalid-credential':
+                    Swal.fire('Invalid Email', 'The email address is invalid. Please enter a valid email.', 'error');
+                    break;
+                case 'auth/user-not-found':
+                    Swal.fire('User Not Found', 'No account found with this email. Please check or register first.', 'error');
+                    break;
+                case 'auth/wrong-password':
+                    Swal.fire('Wrong Password', 'The password you entered is incorrect. Please try again.', 'error');
+                    break;
+                default:
+                    Swal.fire('Error', error.message, 'error');
+                    break;
+            }
+        });
+    }
+
+
+
+
+    // login with google
     const handleLoginGoogle = () =>{
         signInWithPopup(auth, googleProvider)
         .then((result) => {
@@ -23,7 +82,7 @@ const Login = () => {
           console.log(googleUser);
           setUser(googleUser);
           Swal.fire('Login Successful', 'You have successfully logged in.', 'success');
-        //   navigate(from?from:"/");
+          navigate(from?from:"/");
         }).catch((error) => {
             let errorMessage = '';
 
@@ -44,6 +103,7 @@ const Login = () => {
             Swal.fire('Error', errorMessage, 'error');
         });
     }
+
     return (
         <Fade direction='down' triggerOnce>
             <div>
@@ -52,7 +112,7 @@ const Login = () => {
                     <p className="text-sm text-center text-base-content">Don't have account?
                         <Link  to={'/registration'} className="focus:underline hover:underline text-blue-700"> Registration here</Link>
                     </p>
-                    <form noValidate="" action="" className="space-y-8 mt-6">
+                    <form onSubmit={handleLoginWithPassword} className="space-y-8 mt-6">
                         <div className="space-y-4">
                             <div className="space-y-2">
                                 <label htmlFor="email" className="block text-sm">Email address</label>
@@ -61,7 +121,7 @@ const Login = () => {
                             <div className="space-y-2">
                                 <div className="flex justify-between">
                                     <label htmlFor="password" className="text-sm">Password</label>
-                                    <a rel="noopener noreferrer" href="#" className="text-xs hover:underline">Forgot password?</a>
+                                    <Link rel="noopener noreferrer" className="text-xs hover:underline">Forgot password?</Link>
                                 </div>
                                 <div className="relative">
                                     <input type={passwordEye ? "password" : "text"} name="password" id="password" placeholder="Enter Password" className="bg-base-200/70 mt-1 focus:outline focus:outline-base-content/25 px-3.5 py-[9px] rounded-[2px] w-full input-bg-dark-mode" />
@@ -73,7 +133,7 @@ const Login = () => {
                                 </div>
                             </div>
                         </div>
-                        <button type="button" className="w-full px-8 py-5 font-semibold btn bg-primary/90 hover:bg-primary/40 cursor-pointer rounded-[2px] text-white sm:text-[16px]">Login</button>
+                        <button type="submit" className="w-full px-8 py-5 font-semibold btn bg-primary/90 hover:bg-primary/40 cursor-pointer rounded-[2px] text-white sm:text-[16px]">Login</button>
                     </form>
 
                     {/* or */}
