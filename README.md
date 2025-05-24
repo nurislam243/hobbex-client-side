@@ -7,7 +7,6 @@
 ## 🔗 Live Preview & Repositories
 
 - 🌐 **Live Site:** [https://hobbex-c8104.web.app/](https://hobbex-c8104.web.app/)
-- 💻 **Client Repo:** [https://github.com/nurislam243/hobbex-client](https://github.com/nurislam243/hobbex-client)
 - 🛠️ **Server Repo:** [https://github.com/Programming-Hero-Web-Course4/b11a10-server-side-nurislam243](https://github.com/Programming-Hero-Web-Course4/b11a10-server-side-nurislam243)
 
 ---

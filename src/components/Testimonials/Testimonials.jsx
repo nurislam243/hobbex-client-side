@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { Zoom } from 'react-awesome-reveal';
 import { FaQuoteLeft } from 'react-icons/fa';
 import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md';
+import ResponsiveReveal from '../ResponsiveReveal/ResponsiveReveal';
 
 const testimonials = [
   {
@@ -64,50 +65,50 @@ const Testimonials = () => {
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-primary">
         What Our Users Say
       </h2>
-      <Zoom>
-      <div className="relative group">
-        {/* Left Arrow */}
-        <MdArrowBackIosNew
-          onClick={slideLeft}
-          size={38}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 hidden black-text-dark-mode @min-[640px]:block opacity-0 group-hover:opacity-60 hover:opacity-100 bg-white rounded-full p-2 shadow-md cursor-pointer transition"
-        />
-        {/* Scrollable Testimonials */}
-        <div
-          ref={sliderRef}
-          className="sm:flex grid grid-cols-1 @min-[554px]:grid-cols-2 gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hidden"
-        >
-          {testimonials.map((testimonial, idx) => (          
-             <div
-                key={idx}
-                className="sm:w-[280px] md:w-[335px] lg:w-[329px] xl:w-[306px] 2xl:w-[371px] snap-start bg-base-100 border border-base-content/50 rounded-md p-6 shadow hover:shadow-xl transition duration-300 flex-shrink-0"
-              >
-                <FaQuoteLeft className="text-2xl text-accent mb-3" />
-                <div className="md:min-h-[120px] xl:min-h-[150px] 2xl:min-h-[120px]">
-                  <p className="text-gray-700 white-text-dark-mode mb-4">{testimonial.feedback}</p>
-                </div>
-                <div className="flex items-center gap-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover border-2 border-primary"
-                  />
-                  <div>
-                    <h4 className="font-semibold">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+      <ResponsiveReveal>
+        <div className="relative group">
+          {/* Left Arrow */}
+          <MdArrowBackIosNew
+            onClick={slideLeft}
+            size={38}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 hidden black-text-dark-mode @min-[640px]:block opacity-0 group-hover:opacity-60 hover:opacity-100 bg-white rounded-full p-2 shadow-md cursor-pointer transition"
+          />
+          {/* Scrollable Testimonials */}
+          <div
+            ref={sliderRef}
+            className="sm:flex grid grid-cols-1 @min-[554px]:grid-cols-2 gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hidden"
+          >
+            {testimonials.map((testimonial, idx) => (          
+              <div
+                  key={idx}
+                  className="sm:w-[280px] md:w-[335px] lg:w-[329px] xl:w-[306px] 2xl:w-[371px] snap-start bg-base-100 border border-base-content/50 rounded-md p-6 shadow hover:shadow-xl transition duration-300 flex-shrink-0"
+                >
+                  <FaQuoteLeft className="text-2xl text-accent mb-3" />
+                  <div className="md:min-h-[120px] xl:min-h-[150px] 2xl:min-h-[120px]">
+                    <p className="text-gray-700 white-text-dark-mode mb-4">{testimonial.feedback}</p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full object-cover border-2 border-primary"
+                    />
+                    <div>
+                      <h4 className="font-semibold">{testimonial.name}</h4>
+                      <p className="text-sm text-gray-500">{testimonial.role}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-          ))}
+            ))}
+          </div>
+          {/* Right Arrow */}
+          <MdArrowForwardIos
+            onClick={slideRight}
+            size={38}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 hidden @min-[640px]:block opacity-0 group-hover:opacity-60 hover:opacity-100 bg-white black-text-dark-mode rounded-full p-2 shadow-md cursor-pointer transition"
+          />
         </div>
-        {/* Right Arrow */}
-        <MdArrowForwardIos
-          onClick={slideRight}
-          size={38}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 hidden @min-[640px]:block opacity-0 group-hover:opacity-60 hover:opacity-100 bg-white black-text-dark-mode rounded-full p-2 shadow-md cursor-pointer transition"
-        />
-      </div>
-      </Zoom>
+      </ResponsiveReveal>
     </section>
   );
 };
