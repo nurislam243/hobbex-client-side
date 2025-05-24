@@ -43,8 +43,8 @@ const CreateGroup = () => {
       return;
     }
 
-    if (!updatedGroup.imageURL || !/^https?:\/\/.+/.test(updatedGroup.imageURL)) {
-      toast.error("Please enter a valid image URL (must start with http/https).");
+    if (!updatedGroup.imageURL || !updatedGroup.imageURL.startsWith("http")) {
+      toast.error("Please enter a valid image URL");
       return;
     }
 

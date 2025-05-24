@@ -42,11 +42,6 @@ const CreateGroup = () => {
       return;
     }
 
-    // if (new Date(newGroup.startDate) < new Date()) {
-    //   toast.error("Start date cannot be in the past.");
-    //   return;
-    // }
-
     if (!newGroup.imageURL || !newGroup.imageURL.startsWith("http")) {
       toast.error("Please enter a valid image URL.");
       return;
