@@ -9,7 +9,7 @@ const NavEndAvatar = () => {
         <div className='flex gap-3 items-center'>
             <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
                  {
-                    user ? <img referrerPolicy='no-referrer' src={user.photoURL} className='h-[40px] w-[40px] md:h-[44px] md:w-[44px] lg:h-[47px] lg:w-[47px] rounded-full' alt="" /> : ""
+                    user ? <img referrerPolicy='no-referrer' src={user.photoURL} className='h-[40px] w-[40px] min-h-[40px] min-w-[40px] md:h-[44px] md:w-[44px] lg:h-[47px] lg:w-[47px] rounded-full' alt="" /> : ""
                  }
             </div>
            

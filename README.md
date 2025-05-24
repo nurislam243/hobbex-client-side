@@ -1,49 +1,128 @@
-# HobbEx - A Local Hobby Group Organizer
+# 🎨 HobbEx - A Local Hobby Group Organizer
 
-🔗 **Live Site:** [https://hobbex-c8104.web.app/](https://hobbex-c8104.web.app/)
-- 🛠️ Server GitHub Repo: [https://github.com/Programming-Hero-Web-Course4/b11a10-server-side-nurislam243](https://github.com/Programming-Hero-Web-Course4/b11a10-server-side-nurislam243)
-
-HobbEx is a platform that allows users to discover, create, and manage local hobby-based groups. Whether you're into painting, reading, or hiking — HobbEx helps you connect with others who share the same passion.
-
-## 🚀 Features
-
-- 🔐 **Authentication System:** Email-password-based login with Google login support and form validations using Firebase.
-- 🎨 **User-Friendly Interface:** Fully responsive layout with dark/light theme toggle and interactive UI components.
-- 🧑‍🤝‍🧑 **Group Management:** Users can create, update, delete, and join hobby groups. Past-date groups cannot be joined.
-- ⚙️ **Protected Routes:** Secure routes for creating groups, viewing user-created groups, and accessing group details.
-- ✨ **Enhanced UI:** Integrated with **React Simple Typewriter**, **React Awesome Reveal**, and Lottie animations for dynamic visual experience.
-
-## 📁 Folder Structure
-
-- `src/`
-  - `components/` - Reusable UI components like Navbar, Footer, etc.
-  - `pages/` - Route-based pages (Home, Login, Register, CreateGroup, MyGroups, GroupDetails, etc.)
-  - `hooks/` - Custom hooks for authentication and data loading.
-  - `routes/` - Protected route implementations.
-  - `firebase/` - Firebase config and initialization (using `.env`).
-  - `utils/` - Utility functions (e.g., for toast notifications and validations).
-
-## 🔧 Technologies Used
-
-- React.js
-- React Router
-- Firebase Authentication
-- Express.js (Backend)
-- MongoDB (Database)
-- Tailwind CSS + DaisyUI
-- Lottie React, React Awesome Reveal, React Simple Typewriter
-
-## 🛡️ Security & Best Practices
-
-- 🔒 Firebase and MongoDB credentials are hidden using `.env` environment variables.
-- ⚠️ No usage of Lorem Ipsum or default alerts.
-- ✅ Validations with visual toast messages (using `react-toastify`).
-- 💾 Client hosted on Firebase, server on Vercel.
-
-## 📜 License
-
-This project is submitted as part of the Programming Hero Web Development Course Assignment 10.
+**HobbEx** is a responsive web application that helps users **discover, create, and join local hobby groups** such as painting circles, reading clubs, or hiking crews. The platform fosters community engagement based on shared passions and hobbies.
 
 ---
 
-> Developed with ❤️ by [Nur Islam](https://github.com/nurislam243)
+## 🔗 Live Preview & Repositories
+
+- 🌐 **Live Site:** [https://hobbex-c8104.web.app/](https://hobbex-c8104.web.app/)
+- 💻 **Client Repo:** [https://github.com/nurislam243/hobbex-client](https://github.com/nurislam243/hobbex-client)
+- 🛠️ **Server Repo:** [https://github.com/Programming-Hero-Web-Course4/b11a10-server-side-nurislam243](https://github.com/Programming-Hero-Web-Course4/b11a10-server-side-nurislam243)
+
+---
+
+## 📌 About the Project
+
+HobbEx enables users to:
+- Find and explore hobby groups.
+- Create their own hobby group.
+- Join groups that match their interests.
+- Manage their created groups.
+
+All group data is stored in a secure backend using MongoDB, and the UI is built using React with modern UI libraries to ensure interactivity, speed, and responsiveness.
+
+---
+
+## 🚀 Key Features
+
+### 🔐 Authentication & Authorization
+- Email & password login (with password validation).
+- Google Sign-In with Firebase Authentication.
+- Private routes protected using custom route guard (`PrivateRoute`).
+- Authenticated users only can create, update, or join groups.
+
+### 🎯 Group Management
+- Create, update, and delete hobby groups.
+- Past-date groups cannot be joined.
+- “My Groups” page shows only the groups created by the logged-in user.
+
+### 📱 Responsive & Accessible UI
+- 100% mobile-first responsive design.
+- Light/Dark theme toggle with state persistence.
+- Clean and unique design (not copied from example).
+
+### 🛠️ Technologies & Libraries Used
+
+#### ✅ Core Stack:
+- **React.js**
+- **React Router DOM**
+- **Firebase Authentication**
+- **Express.js** (Backend)
+- **MongoDB** (Database)
+- **Tailwind CSS** + **DaisyUI**
+
+#### ✨ UI & UX Enhancements:
+- `Swiper JS` – Responsive sliders
+- `Lottie React` – Engaging animations
+- `React Awesome Reveal` – Entrance animations
+- `React Simple Typewriter` – Typewriter effects
+- `React Tooltip` – Hover-based tooltips
+- `React Icons` – Icon support
+- `SweetAlert2` – Beautiful confirmation/alert popups
+- `React Toastify` – Toast notifications
+- `React Helmet` – Dynamic document titles
+
+#### 🧰 Utilities:
+- `date-fns` – For date formatting and comparisons
+
+#### 🚀 Deployment:
+- **Client:** Firebase Hosting
+- **Server:** Vercel
+
+---
+
+## 🧭 Routing Overview (with Access Control)
+
+| Route                 | Component         | Access     | Loader (if any)                       |
+|----------------------|------------------|------------|---------------------------------------|
+| `/`                  | Home             | Public     | ✅ All groups                          |
+| `/groups`            | AllGroups        | Public     | ✅ All groups                          |
+| `/group/:id`         | GroupDetails     | Private    | ✅ Single group                        |
+| `/createGroup`       | CreateGroup      | Private    | ❌ No loader                           |
+| `/myGroups`          | MyGroups         | Private    | ✅ Filtered user groups                |
+| `/updateGroup/:id`   | UpdateGroup      | Private    | ✅ Single group                        |
+| `/login`             | Login            | Public     | ❌                                     |
+| `/registration`      | Register         | Public     | ❌                                     |
+| `*` (Not Found)      | NotFound         | Public     | ❌                                     |
+
+---
+
+## ✅ Functional Pages Summary
+
+| Page             | Path                 | Access Type |
+|------------------|----------------------|-------------|
+| Home             | `/`                  | Public      |
+| All Groups       | `/groups`            | Public      |
+| Group Details    | `/group/:id`         | Private     |
+| Create Group     | `/createGroup`       | Private     |
+| My Groups        | `/myGroups`          | Private     |
+| Update Group     | `/updateGroup/:id`   | Private     |
+| Login            | `/login`             | Public      |
+| Register         | `/registration`      | Public      |
+| Not Found (404)  | `*`                  | Public      |
+
+---
+
+## 🧩 Folder Structure
+
+```bash
+src/
+├── assets/             # Static assets (images, lottie files)
+├── components/         # Navbar, Footer, Route Guards, etc.
+├── firebase/           # Firebase config & initialization
+├── hooks/              # Custom hooks (e.g., useAuth)
+├── layouts/            # Root layout (outlet setup)
+├── Components/
+├── pages/
+│   ├── Home/
+│   ├── Groups/         # AllGroups, GroupDetails, MyGroups
+│   ├── CreateGroup/
+│   ├── UpdateGroup/
+│   ├── Login/
+│   ├── Register/
+│   ├── NotFound/
+├── routes/             # React Router setup (createBrowserRouter)
+├── ui/                 # UI components like Spinner, Loader
+├── utils/              # Helper utilities (toasts, validators)
+└── main.jsx            # Root app initialization
