@@ -125,3 +125,41 @@ src/
 ├── ui/                 # UI components like Spinner, Loader
 ├── utils/              # Helper utilities (toasts, validators)
 └── main.jsx            # Root app initialization
+
+
+
+## 🛠️ How to Run HobbEx Locally
+
+### 🔧 Prerequisites
+Make sure you have the following installed:
+- Node.js (v16 or above)
+- npm or yarn
+- Git
+- MongoDB (Local or Cloud)
+- Firebase project (for authentication)
+
+---
+
+### 📁 Clone Repositories, Install Dependencies & Run
+
+```bash
+# Clone Client
+git clone https://github.com/your-username/hobbex-client.git
+cd hobbex-client
+npm install
+
+# Create .env file in hobbex-client with the following:
+# (replace with your actual Firebase credentials)
+VITE_API_URL=http://localhost:5000
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+
+# Start Client
+npm run dev
+
+
+

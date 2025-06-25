@@ -15,7 +15,7 @@ const MyGroups = () => {
     const allGroups = useLoaderData();
     const initialGroups = filterInitialMyGroups(allGroups, user);
     const [groups, setGroups] = useState(initialGroups);
-    console.log(user);
+    // console.log(user);
 
 
     const handleDeleteGroup = (id) => {
@@ -49,7 +49,11 @@ const MyGroups = () => {
             }           
           })
           .catch(error => {
-            console.log('Delete failed:', error);
+            Swal.fire({
+                title: "Delete Failed!",
+                text: error,
+                icon: "error", 
+              });
           });
 
 

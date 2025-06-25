@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 const CreateGroup = () => {
   const {user} = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
 
   const handleCreateGroup = (e) =>{
     e.preventDefault();
@@ -16,6 +16,7 @@ const CreateGroup = () => {
 
 
     // create group form validation
+
     if (!newGroup.groupName || newGroup.groupName.length < 3) {
       toast.error("Group name must be at least 3 characters.");
       return;
@@ -42,6 +43,7 @@ const CreateGroup = () => {
       return;
     }
 
+
     if (!newGroup.imageURL || !newGroup.imageURL.startsWith("http")) {
       toast.error("Please enter a valid image URL.");
       return;
@@ -63,7 +65,7 @@ const CreateGroup = () => {
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data);
+      // console.log(data);
       if(data.insertedId){
         Swal.fire({
           title: 'Group Created!',

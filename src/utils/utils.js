@@ -1,6 +1,6 @@
 export const filterInitialMyGroups = (allGroups, user) =>{
     const userEmailAuth = user.email;
-    console.log(userEmailAuth)
+    // console.log(userEmailAuth)
     const myGroups = allGroups.filter((group) => group.userEmail === userEmailAuth)
     return myGroups;
 }

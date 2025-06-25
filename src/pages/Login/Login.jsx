@@ -79,7 +79,7 @@ const Login = () => {
         signInWithPopup(auth, googleProvider)
         .then((result) => {
           const googleUser = result.user;
-          console.log(googleUser);
+        //   console.log(googleUser);
           setUser(googleUser);
           Swal.fire('Login Successful', 'You have successfully logged in.', 'success');
           navigate(from?from:"/");
