@@ -26,3 +26,7 @@ export const filterIsDateEnd = (date) =>{
         return true;
     }
 }
+
+export function sortEventsByStartDate(events) {
+  return [...events].sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
+}
