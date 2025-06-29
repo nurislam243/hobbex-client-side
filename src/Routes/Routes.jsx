@@ -12,6 +12,7 @@ import MyGroups from "../pages/MyGroups/MyGroups";
 import NotFound from "../pages/NotFound/NotFound";
 import Spinner from "../ui/Spinner/Spinner";
 import AboutUs from "../pages/AboutUs/AboutUs";
+import Blogs from "../pages/Blogs/Blogs";
 
  export const router = createBrowserRouter([
     {
@@ -34,6 +35,11 @@ import AboutUs from "../pages/AboutUs/AboutUs";
         {
           path: '/about',
           Component: AboutUs
+        },
+        {
+          path: '/blogs',
+          loader: () => fetch('blogs.json'),
+          Component: Blogs
         },
         {
           path: '/group/:id',
