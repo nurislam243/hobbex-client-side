@@ -36,10 +36,7 @@ const Navbar = () => {
                                 <li><NavLink to={'/'} className={({ isActive }) =>isActive ? "bg-accent/20 text-primary/65 font-semibold transition-colors duration-200" : ""}>Home</NavLink></li>
                                 <li><NavLink to={'/groups'} className={({ isActive }) =>isActive ? "bg-accent/20 text-primary/65 font-semibold transition-colors duration-200" : ""}>AllGroups</NavLink></li>
                                 <li><NavLink to={'/blogs'} className={({ isActive }) =>isActive ? "bg-accent/20 text-primary/65 font-semibold transition-colors duration-200" : ""}>Blogs</NavLink></li>
-                                <li><NavLink to={'/about'} className={({ isActive }) =>isActive ? "bg-accent/20 text-primary/65 font-semibold transition-colors duration-200" : ""}>About Us</NavLink></li>
-                                <li><NavLink to={'/createGroup'} className={({ isActive }) =>isActive ? "bg-accent/20 text-primary/65 font-semibold transition-colors duration-200" : ""}>Create Group</NavLink></li>
-                                <li><NavLink to={'/myGroups'} className={({ isActive }) =>isActive ? "bg-accent/20 text-primary/65 font-semibold transition-colors duration-200" : ""}>My Groups</NavLink>
-                                </li>                                         
+                                <li><NavLink to={'/about'} className={({ isActive }) =>isActive ? "bg-accent/20 text-primary/65 font-semibold transition-colors duration-200" : ""}>About Us</NavLink></li>                                       
                             </ul>
                         </div>
                         <Zoom triggerOnce>
@@ -56,9 +53,7 @@ const Navbar = () => {
                             <li><NavLink to={'/'} className={({ isActive }) =>isActive ? "border-b-2 border-base-content/80 text-base-content/80 font-semibold transition-colors duration-200" : ""}>Home</NavLink></li>
                             <li><NavLink to={'/groups'} className={({ isActive }) =>isActive ? "border-b-2 border-base-content/80 text-base-content/80 font-semibold transition-colors duration-200" : ""}>AllGroups</NavLink></li>
                             <li><NavLink to={'/blogs'} className={({ isActive }) =>isActive ? "border-b-2 border-base-content/80 text-base-content/80 font-semibold transition-colors duration-200" : ""}>Blogs</NavLink></li>
-                            <li><NavLink to={'/about'} className={({ isActive }) =>isActive ? "border-b-2 border-base-content/80 text-base-content/80 font-semibold transition-colors duration-200" : ""}>About Us</NavLink></li>
-                            <li><NavLink to={'/createGroup'} className={({ isActive }) =>isActive ? "border-b-2 border-base-content/80 text-base-content/80 font-semibold transition-colors duration-200" : ""}>Create Group</NavLink></li>
-                            <li><NavLink to={'/myGroups'} className={({ isActive }) =>isActive ? "border-b-2 border-base-content/80 text-base-content/80 font-semibold transition-colors duration-200" : ""}>My Groups</NavLink></li>                   
+                            <li><NavLink to={'/about'} className={({ isActive }) =>isActive ? "border-b-2 border-base-content/80 text-base-content/80 font-semibold transition-colors duration-200" : ""}>About Us</NavLink></li>                 
                         </ul>
                     </div>
                 </div>

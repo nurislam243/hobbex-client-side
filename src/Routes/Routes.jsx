@@ -13,6 +13,8 @@ import NotFound from "../pages/NotFound/NotFound";
 import Spinner from "../ui/Spinner/Spinner";
 import AboutUs from "../pages/AboutUs/AboutUs";
 import Blogs from "../pages/Blogs/Blogs";
+import Dashboard from "../pages/Dashboard/Dashboard";
+import Overview from "../pages/Dashboard/Overview/Overview";
 
  export const router = createBrowserRouter([
     {
@@ -48,16 +50,6 @@ import Blogs from "../pages/Blogs/Blogs";
           element: <PrivateRoute><GroupDetails></GroupDetails></PrivateRoute>
         },
         {
-          path: '/createGroup',
-          element: <PrivateRoute><CreateGroup></CreateGroup></PrivateRoute>
-        },
-        {
-          path: '/myGroups',
-          loader: () => fetch('https://hobbex-server.vercel.app/groups'),
-          hydrateFallbackElement: <Spinner></Spinner>,
-          element: <PrivateRoute><MyGroups></MyGroups></PrivateRoute>
-        },
-        {
           path: '/updateGroup/:id',
           loader: ({ params }) => fetch(`https://hobbex-server.vercel.app/groups/${params.id}`) ,
           hydrateFallbackElement: <Spinner></Spinner>,
@@ -74,4 +66,31 @@ import Blogs from "../pages/Blogs/Blogs";
         
       ]
     },
+    {
+      path: '/dashboard',
+      Component: Dashboard,
+      children: [
+        {
+          index: true,
+          loader: () => fetch('https://hobbex-server.vercel.app/groups'),
+          Component: Overview
+        },
+        {
+          path: 'myGroups',
+          loader: () => fetch('https://hobbex-server.vercel.app/groups'),
+          hydrateFallbackElement: <Spinner></Spinner>,
+          element: <PrivateRoute><MyGroups></MyGroups></PrivateRoute>
+        },
+        {
+          path: 'createGroup',
+          element: <PrivateRoute><CreateGroup></CreateGroup></PrivateRoute>
+        },
+        {
+          path: 'groups',
+          loader: () => fetch('https://hobbex-server.vercel.app/groups'),
+          hydrateFallbackElement: <Spinner></Spinner>,
+          Component: AllGroups
+        },
+      ]
+    }
   ]);
