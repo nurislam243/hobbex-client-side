@@ -14,7 +14,7 @@ export const filterFeaturedGroups = (groups) =>{
         return startDate > today
     })
 
-    const sixFeaturedGroup = onGoingGroup.slice(0, 6)
+    const sixFeaturedGroup = onGoingGroup.slice(0, 8)
     return sixFeaturedGroup;
 }
 

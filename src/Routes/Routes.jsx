@@ -11,6 +11,7 @@ import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import MyGroups from "../pages/MyGroups/MyGroups";
 import NotFound from "../pages/NotFound/NotFound";
 import Spinner from "../ui/Spinner/Spinner";
+import AboutUs from "../pages/AboutUs/AboutUs";
 
  export const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ import Spinner from "../ui/Spinner/Spinner";
           loader: () => fetch('https://hobbex-server.vercel.app/groups'),
           hydrateFallbackElement: <Spinner></Spinner>,
           Component: AllGroups
+        },
+        {
+          path: '/about',
+          Component: AboutUs
         },
         {
           path: '/group/:id',

@@ -14,7 +14,7 @@ const FeaturedSection = ({groups}) => {
             <p className="text-center text-base-content mb-10 max-w-2xl mx-auto">
                 Discover the most active and engaging hobby communities.
             </p>           
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6">
             {
                 featuredGroup.map(group => <FeaturedGroupCard key={group._id} group={group} ></FeaturedGroupCard>)
             }

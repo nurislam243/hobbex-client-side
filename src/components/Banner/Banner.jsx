@@ -97,7 +97,7 @@ const Banner = () => {
             sliderCategories.map(slider => (
               <SwiperSlide>
               <div
-                className="hero h-[220px] @min-[500px]:h-[290px] @min-[650px]:h-[320px] @min-[780px]:h-[340px] @min-[900px]:h-[360px] @min-[1100px]:h-[400px] object-cover"
+                className="hero h-[260px] @min-[500px]:h-[330px] @min-[650px]:h-[360px] @min-[780px]:h-[380px] @min-[900px]:h-[400px] @min-[1100px]:h-[440px] object-cover"
                 style={{
                   backgroundImage: `url(${slider.bannerImg})`
                 }}
@@ -111,7 +111,7 @@ const Banner = () => {
                     <p className="text-gray-300">
                       {slider.description}
                     </p>
-                    <Link to={'/groups'} className="btn rounded-[2px] btn-secondary btn-outline text-white mt-9 sm:text-lg">View All Groups</Link>
+                    <Link to={'/groups'} className="btn rounded-[2px] btn-primary btn-outline text-white mt-9 sm:text-lg">View All Groups</Link>
                   </div>
                 </div>
               </div>             
