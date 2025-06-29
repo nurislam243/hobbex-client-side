@@ -21,8 +21,8 @@ const teamMembers = [
 
 const AboutUs = () => {
   return (
-    <section className="bg-base-100 text-base-content py-20 px-4 md:px-12 lg:px-24 transition-all duration-300 ease-in-out">
-      <div className="max-w-7xl mx-auto space-y-20">
+    <section className="bg-base-100 text-base-content py-20 transition-all duration-300 ease-in-out">
+      <div className=" space-y-20">
 
         {/* Title & Intro */}
         <div className="text-center">
@@ -34,21 +34,21 @@ const AboutUs = () => {
 
         {/* Mission, Why, Importance */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div className="bg-base-200 p-8 rounded-2xl shadow-md hover:shadow-xl transition-shadow">
+          <div className="bg-base-200 p-8 rounded shadow-md hover:shadow-xl transition-shadow">
             <div className="flex justify-center mb-4 text-primary text-4xl"><FaBullseye /></div>
             <h3 className="text-2xl font-semibold mb-2">Our Mission</h3>
             <p className="text-base-content/80">
               To unite hobbyists through a platform that inspires creativity, collaboration, and lifelong learning.
             </p>
           </div>
-          <div className="bg-base-200 p-8 rounded-2xl shadow-md hover:shadow-xl transition-shadow">
+          <div className="bg-base-200 p-8 rounded shadow-md hover:shadow-xl transition-shadow">
             <div className="flex justify-center mb-4 text-primary text-4xl"><FaLightbulb /></div>
             <h3 className="text-2xl font-semibold mb-2">Why HobbEx?</h3>
             <p className="text-base-content/80">
               We simplify how you find groups, book services, join events, and grow your skills through fun and flexibility.
             </p>
           </div>
-          <div className="bg-base-200 p-8 rounded-2xl shadow-md hover:shadow-xl transition-shadow">
+          <div className="bg-base-200 p-8 rounded shadow-md hover:shadow-xl transition-shadow">
             <div className="flex justify-center mb-4 text-primary text-4xl"><FaPaintBrush /></div>
             <h3 className="text-2xl font-semibold mb-2">Importance</h3>
             <p className="text-base-content/80">
@@ -63,13 +63,18 @@ const AboutUs = () => {
           <p className="text-base-content/70 max-w-4xl mx-auto mb-6">
             Whether you're into robotics, painting, gardening, or game development — HobbEx empowers your hobbies through:
           </p>
-          <ul className="text-left text-base-content/80 max-w-3xl mx-auto space-y-4">
-            <li className="flex items-center gap-2"><FaSearch className="text-primary" /> Discovering local & global hobby groups</li>
-            <li className="flex items-center gap-2"><FaCalendarAlt className="text-primary" /> Hosting & attending engaging events & workshops</li>
-            <li className="flex items-center gap-2"><FaComments className="text-primary" /> Sharing guides, experiences & community insights</li>
-            <li className="flex items-center gap-2"><FaChartLine className="text-primary" /> Tracking your growth through smart dashboards</li>
-            <li className="flex items-center gap-2"><FaTools className="text-primary" /> Offering or booking hobby-based services</li>
-          </ul>
+          <div className="flex flex-col md:flex-row mt-11 gap-8">
+            <div className="">
+                <img src="https://i.ibb.co/GGp0TFy/about-us-information-service-sharing-join-concept.jpg" className='w-full h-[260px] md:h-[360px] object-cover rounded' alt="about us image" />
+            </div>
+            <ul className="text-left text-base-content/80 max-w-3xl border-l-8 border-primary pl-5 mx-auto space-y-4">
+                <li className="flex items-center gap-2"><FaSearch className="text-primary" /> Discovering local & global hobby groups</li>
+                <li className="flex items-center gap-2"><FaCalendarAlt className="text-primary" /> Hosting & attending engaging events & workshops</li>
+                <li className="flex items-center gap-2"><FaComments className="text-primary" /> Sharing guides, experiences & community insights</li>
+                <li className="flex items-center gap-2"><FaChartLine className="text-primary" /> Tracking your growth through smart dashboards</li>
+                <li className="flex items-center gap-2"><FaTools className="text-primary" /> Offering or booking hobby-based services</li>
+            </ul>
+          </div>
         </div>
 
         {/* Meet the Team */}
@@ -79,7 +84,7 @@ const AboutUs = () => {
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="card bg-base-200 shadow-md hover:shadow-xl transition-shadow duration-300"
+                className="card bg-base-200 rounded shadow-md hover:shadow-xl transition-shadow duration-300"
               >
                 <figure className="pt-6">
                   <img
