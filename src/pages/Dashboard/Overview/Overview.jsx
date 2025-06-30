@@ -10,9 +10,9 @@ import { AuthContext } from '../../../context/AuthContext';
 const Overview = () => {
     const {user} = useContext(AuthContext);
     const groups = useLoaderData();
-    const myGroups = groups.filter((group) => group.userEmail === user.email)
-    const totalCategory = [...new Set(groups.map(group => group.hobbyCategory))];
-    const totalUser = [...new Set(groups.map(group => group.userEmail))]
+    const myGroups = groups.filter((group) => group?.userEmail === user?.email)
+    const totalCategory = [...new Set(groups.map(group => group?.hobbyCategory))];
+    const totalUser = [...new Set(groups.map(group => group?.userEmail))]
         
     return (
         <div>
