@@ -7,7 +7,7 @@ import { Tooltip } from 'react-tooltip';
 import { Zoom } from 'react-awesome-reveal';
 
 const Navbar = () => {
-    const { theme, setTheme } = useContext(AuthContext);
+    const { theme, setTheme, user } = useContext(AuthContext);
     return (
         <div className="bg-base-300 py-[8px] lg:py-[13px] sticky top-0 z-20">
             <nav className="navbar md:container mx-auto px-[6px] @min-[300px]:px-2 @min-[315px]:px-3 @min-[340px]:px-[14px] @min-[380px]:px-4 @min-[768px]:px-[2px] @min-[1024px]:px-4 @min-[1044px]:px-0 @min-[1280px]:px-4 @min-[1310px]:px-0 @min-[1536px]:px-4 @min-[1562px]:px-0">
@@ -35,6 +35,9 @@ const Navbar = () => {
                                 </div>
                                 <li><NavLink to={'/'} className={({ isActive }) =>isActive ? "bg-accent/20 text-primary/65 font-semibold transition-colors duration-200" : ""}>Home</NavLink></li>
                                 <li><NavLink to={'/groups'} className={({ isActive }) =>isActive ? "bg-accent/20 text-primary/65 font-semibold transition-colors duration-200" : ""}>AllGroups</NavLink></li>
+                                {
+                                    user ? <li><NavLink to={'/dashboard'} className={({ isActive }) =>isActive ? "bg-accent/20 text-primary/65 font-semibold transition-colors duration-200" : ""}>Dashboard</NavLink></li> : ""
+                                }
                                 <li><NavLink to={'/blogs'} className={({ isActive }) =>isActive ? "bg-accent/20 text-primary/65 font-semibold transition-colors duration-200" : ""}>Blogs</NavLink></li>
                                 <li><NavLink to={'/about'} className={({ isActive }) =>isActive ? "bg-accent/20 text-primary/65 font-semibold transition-colors duration-200" : ""}>About Us</NavLink></li>                                       
                             </ul>
@@ -52,6 +55,9 @@ const Navbar = () => {
                         <ul className="flex gap-[18px] text-[16px]">
                             <li><NavLink to={'/'} className={({ isActive }) =>isActive ? "border-b-2 border-base-content/80 text-base-content/80 font-semibold transition-colors duration-200" : ""}>Home</NavLink></li>
                             <li><NavLink to={'/groups'} className={({ isActive }) =>isActive ? "border-b-2 border-base-content/80 text-base-content/80 font-semibold transition-colors duration-200" : ""}>AllGroups</NavLink></li>
+                            {
+                                user ? <li><NavLink to={'/dashboard'} className={({ isActive }) =>isActive ? "border-b-2 border-base-content/80 text-base-content/80 font-semibold transition-colors duration-200" : ""}>Dashboard</NavLink></li> : ""
+                            }
                             <li><NavLink to={'/blogs'} className={({ isActive }) =>isActive ? "border-b-2 border-base-content/80 text-base-content/80 font-semibold transition-colors duration-200" : ""}>Blogs</NavLink></li>
                             <li><NavLink to={'/about'} className={({ isActive }) =>isActive ? "border-b-2 border-base-content/80 text-base-content/80 font-semibold transition-colors duration-200" : ""}>About Us</NavLink></li>                 
                         </ul>
